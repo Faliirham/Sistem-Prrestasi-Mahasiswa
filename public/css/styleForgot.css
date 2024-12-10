@@ -1,0 +1,92 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.background {
+    background: url('http://localhost/Sistem_Prestasi_Mahasiswa/public/img/Background.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.0); 
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: rgba(0, 0, 102, 0.658);
+    border-radius: 12px;
+    padding: 30px;
+    width: 350px;
+    height: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+h2 {
+    font-size: 27px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ffffff;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+button {
+    margin-top: 20px;
+    width: 270px;
+    padding: 12px;
+    background-color: #1DAC98;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #047062;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+    }
+}

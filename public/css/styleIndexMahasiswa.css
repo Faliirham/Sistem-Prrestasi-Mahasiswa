@@ -1,0 +1,255 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #18143D;
+    color: white;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 88vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+
+}
+
+.menu-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+.menu-item:hover {
+    background: #1DAC98;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Main Content */
+.main-content {
+    width: 85%;
+    margin-left: 20%;
+    background: #f8f8f8;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #140C5F;
+    color: white;
+    padding: 0 10px;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    padding-left: 20px;
+}
+
+.bell button {
+    cursor: pointer;
+    background: #140C5F;
+}
+
+.bell img {
+    height: 30px;
+}
+
+.teks {
+    font-size: 27px;
+    font-weight: bold;
+    margin-right: auto;
+    color: white;
+}
+
+.teks .highlight {
+    color: #f7b600;
+}
+
+.logout {
+    padding: 0 30px;
+}
+
+.logout button {
+    background: #e94b35;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Ranking Section */
+.ranking, .agenda {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+.ranking {
+    margin-right: 2%;
+    float: left;
+    width: 50%;
+}
+
+.ranking h3 {
+    background: #e94b35;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: white;
+    transition: box-shadow 0.3s;
+}
+
+.ranking-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rank-number {
+    font-weight: bold;
+    font-size: 20px;
+    background: #e94b35;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.rank-info p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14px;
+    color: black;
+}
+
+.rank-score {
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    padding-left: 240px;
+}
+
+/* Agenda Section */
+.agenda {
+    margin-left: 2%;
+    float: left;
+    width: 35%;
+}
+
+.agenda h3 {
+    background: #e94b35;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+}
+
+.agenda-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    transition: box-shadow 0.3s;
+}
+
+.agenda-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.agenda-link {
+    background: #2c247d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.agenda-link:hover {
+    background: #3b349c;
+}

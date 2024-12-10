@@ -1,0 +1,267 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #18143D;
+    color: white;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 88vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+
+}
+
+.menu-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu-item:hover {
+    background: #1DAC98;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Main Content */
+.main-content {
+    width: 85%;
+    margin-left: 20%;
+    background: #f8f8f8;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #140C5F;
+    color: white;
+    padding: 0 10px;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    padding-left: 20px;
+}
+
+.bell button {
+    cursor: pointer;
+    background: #140C5F;
+}
+
+.bell img {
+    height: 30px;
+}
+
+.teks {
+    font-size: 27px;
+    font-weight: bold;
+    margin-right: auto;
+    color: white;
+}
+
+.teks .highlight {
+    color: #f7b600;
+}
+
+.logout {
+    padding: 0 30px;
+}
+
+.logout button {
+    background: #e94b35;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    margin-left: 420px;
+    padding: 0.1px;
+    color: #ffffff;
+    background-color: #140C5F;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.349);
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-container h2 {
+    text-align: center;
+    background-color: #2c2f48;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+.form-group label {
+    flex: 1;
+    margin-right: 10px;
+    font-weight: 500;
+}
+.form-group input,
+.form-group select {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.file-upload-container input[type="file"] {
+    flex: 1;
+    padding: 3px;
+}
+.form-group .file-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.form-group .file-info span {
+    font-size: 14px;
+    color: #666;
+}
+.form-group .file-info button {
+    background-color: #1DAC98;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100px;
+}
+.form-group .file-info button:hover {
+    background-color: #00b89c;
+}
+.form-group .file-info .file-name {
+    background-color: #D3D3D3;
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+}
+.form-group .note {
+    font-size: 12px;
+    color: #8f8f8f;
+    text-align: right;
+    padding-right: 5px;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.form-actions button {
+    background-color: #009F58;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-left: 10px;
+    width: 100px;
+}
+.form-actions p {
+    color: #ff4d4d;
+}
+.form-actions button.cancel {
+    background-color: #ff4d4d;
+}
+.form-actions button:hover {
+    opacity: 0.9;
+}
+.file-upload-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.form-upload {
+    display: block;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+    .main-content {
+        padding: 10px;
+    }
+}
