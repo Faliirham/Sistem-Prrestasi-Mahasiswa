@@ -1,4 +1,5 @@
     <!-- Main Content -->
+    <link rel="stylesheet" href="<?= BASECSS?>/Adminprofile.css">
     <main class="main-content">
         <div>
             <div class="profile-container">
@@ -11,22 +12,18 @@
                         </div>
                     </div>
                     <div class="profile-form">
-                        <form action="#" method="post">
+                        <form action="#" method="POST">
                             <div class="profile-form-group">
                                 <label for="nama">Nama</label>
-                                <input type="text" id="nama" value="Hallo Admin">
+                                <input type="text" id="nama" value="<?= $data['nama']?>">
                             </div>
                             <div class="profile-form-group">
                                 <label for="nip">NIP</label>
-                                <input type="text" id="nip" value="22047463888">
-                            </div>
-                            <div class="profile-form-group">
-                                <label for="studi">Studi</label>
-                                <input type="text" id="studi" value="Teknik Informatika">
+                                <input type="text" id="nip" value="<?= $data['NIP']?>">
                             </div>
                             <div class="profile-form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" value="adminPolinema@gmail.com">
+                                <input type="email" id="email" value="<?= $data['email']?>">
                             </div>
                             <button type="submit" class="profile-btn-simpan">Simpan</button>
                         </form>
