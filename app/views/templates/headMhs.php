@@ -58,7 +58,3 @@
                     <p>© polinema.sch.id</p>
                 </footer>
             </aside>
-        </div>
-    </div>
-</body>
-</html>
