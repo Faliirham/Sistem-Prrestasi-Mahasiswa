@@ -16,10 +16,10 @@
                 </div>
                 <h2>LOGIN</h2>
                 <p class="subtitle">SISTEM PENCATATAN PRESTASI MAHASISWA</p>
-                <form action="<?= BASEURL; ?>/Login/auth" method="post">
+                <form action="<?= URL; ?>/Login/auth" method="post">
                     <input type="text" name="username" placeholder="USERNAME" required>
                     <input type="password" name="password" placeholder="PASSWORD" required>
-                    <a href="<?= BASEURL; ?>/Login/forgot" class="forgot-password">Forgot Password ?</a>
+                    <a href="<?= URL; ?>/Login/forgot" class="forgot-password">Forgot Password ?</a>
                     <button type="submit">LOGIN</button>
                 </form>
             </div>
