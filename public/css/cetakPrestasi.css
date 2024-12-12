@@ -1,0 +1,74 @@
+.main-content {
+    flex: 8;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.judul {
+    background-color: #140C5F;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.192);
+}
+
+.judul h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.action-buttons a {
+    color: white;
+    padding: 7px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-cetak{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-cetak button{
+    background-color: #009F58;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.192);
+    cursor: pointer;
+}
+
+.btn-cetak button:hover{
+    opacity: 0.9;
+}
+
+.btn-cetak img{
+    height: 17px;
+    width: 17px;
+    padding: 3px;
+}

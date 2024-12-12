@@ -54,7 +54,7 @@
 }
 
 .profile-btn-ubah:hover {
-  background-color: #1e1659;
+  opacity: 0.9;
 }
 
 .profile-form {
@@ -95,11 +95,6 @@
   color: #333;
 }
 
-.profile-form input:focus {
-  outline: none;
-  border: 2px solid #f05454;
-}
-
 .profile-btn-simpan {
   position: absolute;
   bottom: -60px;
@@ -115,5 +110,5 @@
 }
 
 .profile-btn-simpan:hover {
-  background-color: #27ae60;
+  opacity: 0.9;
 }

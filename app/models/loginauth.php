@@ -59,7 +59,7 @@ class LoginAuth {
                 $_SESSION['admin'] = $this->username;
                 exit;
             } elseif ((int)$result['id_role'] === 1) {
-                header('Location: ' . BASEURL . '/mahasiswa/');
+                header('Location: ' . BASEURL . '/mahasiswa/beranda');
                 $_SESSION['mahasiswa'] = $this->username;
                 exit;
             }

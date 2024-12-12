@@ -10,8 +10,8 @@
   width: 80%;
 }
 
-.leaderboard-ranking h3 {
-  background: #E03616;
+.leaderboard-ranking h1 {
+  background: #FEC01A;
   color: white;
   text-align: center;
   padding: 10px;
@@ -22,7 +22,7 @@
 .leaderboard-ranking-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 10px 15px;
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -41,13 +41,20 @@
 .leaderboard-rank-number {
   width: 35px;
   height: 50px;
+  display: flex;
   justify-content: center;
   margin-right: 16px;
 }
 
+.leaderboard-rank-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: auto;
+}
+
 .leaderboard-rank-info p {
-  margin: 0;
-  margin-right: 50px;
+  margin: 0px;
   line-height: 1.5;
   font-size: 13px;
   color: black;
@@ -56,62 +63,13 @@
 }
 
 .leaderboard-rank-score {
+  text-align: right;
+  margin: 0px;
   font-size: 55px; 
   font-weight: bold;
-  padding-left: 400px;
   color: white; 
   -webkit-text-stroke: 2px gray; 
   text-shadow: 
     1px 1px 2px rgba(0, 0, 0, 0.3), 
     -1px -1px 2px rgba(0, 0, 0, 0.3); 
-}
-
-.leaderboard-agenda {
-  width: 45%;
-}
-
-.leaderboard-agenda h3 {
-  background: #E03616;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0 0 20px 0;
-}
-
-.leaderboard-agenda-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 1px solid gray;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  background: #f7f7f7;
-  padding: 10px;
-  transition: box-shadow 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.leaderboard-agenda-name {
-  font-size: 16px;
-  margin: 0;
-}
-
-.leaderboard-agenda-date {
-  font-size: 12px;
-  margin: 0;
-}
-
-.leaderboard-agenda-link {
-  background: #0033FF;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 14px;
-  align-self: flex-end;
-}
-
-.leaderboard-agenda-link:hover {
-  background: #3b349c;
 }

@@ -11,7 +11,7 @@ body {
 }
 
 .background {
-    background: url('http://localhost/Sistem_Prestasi_Mahasiswa/public/img/Background.jpg') no-repeat center center/cover;
+    background: url('../img/Background.jpg') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -67,10 +67,9 @@ input[type="password"] {
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 270px;
-    padding: 12px;
-    background-color: #1DAC98;
+    padding: 10px;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -80,8 +79,12 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #047062;
+.update {
+    background-color: #1DAC98;
+}
+
+.back {
+    background-color: #E03616;
 }
 
 /* Responsive Design */

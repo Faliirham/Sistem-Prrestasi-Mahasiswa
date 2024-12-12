@@ -1,64 +1,64 @@
 .main-content {
-    flex: 8;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+  flex: 8;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 .welcome {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .welcome h2 {
-    font-size: 24px;
-    color: #333;
+  font-size: 24px;
+  color: #333;
 }
 
 .agenda {
-    margin-top: 20px;
-    background-color: #140C5F;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 50px;
+  margin-top: 20px;
+  background-color: #140C5F;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 .agenda-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    padding: 10px;
-    padding-top: 0px;
-    border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  padding-top: 0px;
+  border-radius: 5px;
 }
 
 .agenda-header h2 {
-    color: #fff;
+  color: #fff;
 }
 
-.tambah-data {
-    background-color: #009F58;
-    color: #fff;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.tambah-agenda {
+  background-color: #009F58;
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.tambah-data:hover {
-    background-color: #009F58;
+.tambah-agenda:hover {
+  opacity: 0.9;
 }
 
 .agenda-list {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;
-    white-space: nowrap;  
-    padding-bottom: 10px;
-    max-width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;  
+  padding-bottom: 10px;
+  max-width: 100%;
 }
 
 .agenda-list::-webkit-scrollbar {
@@ -76,77 +76,85 @@
 
 
 .agenda-item {
-    flex: 0 0 calc(25% - 20px);
-    background-color: #fff;
-    padding: 20px;
-    margin: 0px;
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s, transform 0.3s;
+  flex: 0 0 calc(25% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  margin: 0px;
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .agenda-item:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 .agenda-item h3 {
-    margin: 0;
-    font-size: 20px;
-    text-align: left;
+  margin: 0;
+  font-size: 20px;
+  text-align: left;
 }
 
 .edit-delete-icons {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .edit-delete-icons img {
-    padding: 4px;
-    margin: 5px;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
+  padding: 4px;
+  margin: 5px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
 
 .edit-delete-icons .edit-icon {
-    background-color: blue;
+  background-color: #140C5F;
+}
+
+.edit-delete-icons .edit-icon:hover {
+  opacity: 0.9;
 }
 
 .edit-delete-icons .delete-icon {
-    background: red;
+  background: #E03616;
+}
+
+.edit-delete-icons .delete-icon:hover {
+  opacity: 0.9;
 }
 
 .agenda-item-content {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 0px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 0px;
 }
 
 .time-icon {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .agenda-item a {
-    color: blue;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+  color: blue;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 a:hover {
-    color: #666;
+  color: #666;
 }
 
-/* Pop Up */
-.popup-modal {
+/* Popup */
+.popup-agenda {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -157,18 +165,20 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.popup-content {
-  background-color:  whitesmoke;
+.popup-content-agenda {
+  background-color:  white;
   margin: 15% auto;
   padding: 20px;
   border-radius: 8px;
   width: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
+  opacity: 0.9;
 }
 
-.close-btn {
+.close-btn-agenda {
   position: absolute;
+  color: gray;
   top: 0px;
   right: 10px;
   font-size: 30px;
