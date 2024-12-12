@@ -9,22 +9,22 @@
                 </div>
             </div>
             <div class="profile-form">
-                <form action="#" method="post">
+                <form action="" method="post">
                     <div class="profile-form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" id="nama" value="<?= htmlspecialchars($data['namaMhs'] ?? 'Data tidak ada'); ?>">
+                        <input type="text" id="nama" name="nama" value="<?= htmlspecialchars($data['namaMhs'] ?? 'Data tidak ada'); ?>">
                     </div>
                     <div class="profile-form-group">
-                        <label for="nip">NIM</label>
-                        <input type="text" id="nip" value="<?= htmlspecialchars($data['NIM'] ?? 'Data tidak ada'); ?>" disabled>
+                        <label for="nim">NIM</label>
+                        <input type="text" id="nim" name="nim" value="<?= htmlspecialchars($data['NIM'] ?? 'Data tidak ada'); ?>" disabled>
                     </div>
                     <div class="profile-form-group">
                         <label for="studi">Program Studi</label>
-                        <input type="text" id="studi" value="<?= htmlspecialchars($data['prodi'] ?? 'Data tidak ada'); ?>">
+                        <input type="text" id="studi" name="studi" value="<?= htmlspecialchars($data['prodi'] ?? 'Data tidak ada'); ?>">
                     </div>
                     <div class="profile-form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" value="<?= htmlspecialchars($data['email'] ?? 'Data tidak ada'); ?>">
+                        <input type="email" id="email" name="email" value="<?= htmlspecialchars($data['email'] ?? 'Data tidak ada'); ?>">
                     </div>
                     <button type="submit" class="profile-btn-simpan">Simpan</button>
                 </form>

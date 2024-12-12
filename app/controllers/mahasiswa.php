@@ -23,9 +23,9 @@ class Mahasiswa extends Controller{
         $this->view('mahasiswa/profil', $data);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $nama_mhs = $_POST['nama_mhs'];
-            $email_mhs = $_POST['email_mhs'];
-            $nama_prodi = $_POST['nama_prodi'];
+            $nama_mhs = $_POST['nama'];
+            $email_mhs = $_POST['email'];
+            $nama_prodi = $_POST['studi'];
             
             // Memanggil method update di model
             $updateSuccess = $this->model('UserMahasiswa')->updateProfilMahasiswa($data['NIM'], $nama_mhs, $email_mhs, $nama_prodi);
