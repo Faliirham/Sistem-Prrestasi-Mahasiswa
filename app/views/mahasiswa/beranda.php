@@ -24,51 +24,25 @@
         </section>
         <div class="leaderboard-ranking">
             <h3>Ranking</h3>
-            <div class="leaderboard-ranking-item">
-                <img src="../img/juara1.png" alt="juara1" class="leaderboard-rank-number">
-                <div class="leaderboard-rank-info">
-                    <p>Alvino Valerian</p>
-                    <p>234720221</p>
-                    <p>D-IV Teknik Informatika</p>
-                </div>
-                <span class="leaderboard-rank-score">98</span>
-            </div>
-            <div class="leaderboard-ranking-item">
-                <img src="../img/juara2.png" alt="juara2" class="leaderboard-rank-number">
-                <div class="leaderboard-rank-info">
-                    <p>Alvino Valerian</p>
-                    <p>234720220</p>
-                    <p>D-IV Teknik Informatika</p>
-                </div>
-                <span class="leaderboard-rank-score">95</span>
-            </div>
-            <div class="leaderboard-ranking-item">
-                <img src="../img/juara3.png" alt="juara3" class="leaderboard-rank-number">
-                <div class="leaderboard-rank-info">
-                    <p>Alvino Valerian</p>
-                    <p>234720207</p>
-                    <p>D-IV Teknik Informatika</p>
-                </div>
-                <span class="leaderboard-rank-score">90</span>
-            </div>
-            <div class="leaderboard-ranking-item">
-                <img src="../img/juara4.png" alt="juara4" class="leaderboard-rank-number">
-                <div class="leaderboard-rank-info">
-                    <p>Alvino Valerian</p>
-                    <p>234720204</p>
-                    <p>D-IV Teknik Informatika</p>
-                </div>
-                <span class="leaderboard-rank-score">88</span>
-            </div>
-            <div class="leaderboard-ranking-item">
-                <img src="../img/juara5.png" alt="juara5" class="leaderboard-rank-number">
-                <div class="leaderboard-rank-info">
-                    <p>Alvino Valerian</p>
-                    <p>234720204</p>
-                    <p>D-IV Teknik Informatika</p>
-                </div>
-                <span class="leaderboard-rank-score">87</span>
-            </div>
+            <?php if (!empty($data['leaderboard'])): ?>
+                <?php foreach ($data['leaderboard'] as $index => $item): ?>
+                    <div class="leaderboard-ranking-item">
+                        <?php if ($index < 5): ?>
+                            <img src="<?= BASEIMG ?>/juara<?= $index + 1 ?>.png" alt="juara<?= $index + 1 ?>" class="leaderboard-rank-number">
+                        <?php else: ?>
+                            <span class="leaderboard-rank-number"><?= $index + 1 ?></span>
+                        <?php endif; ?>
+                        <div class="leaderboard-rank-info">
+                            <p><?= htmlspecialchars($item['nama_mahasiswa']) ?></p>
+                            <p><?= htmlspecialchars($item['id_mhs']) ?></p>
+                            <p><?= htmlspecialchars($item['program_studi']) ?></p>
+                        </div>
+                        <span class="leaderboard-rank-score"><?= htmlspecialchars($item['total_point']) ?></span>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Belum ada data leaderboard tersedia.</p>
+            <?php endif; ?>
         </div>
         <section id="features" class="features">
             <h2>Fitur Utama</h2>

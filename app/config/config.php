@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/SIPPMA2/Sistem-Prrestasi-Mahasiswa/public');
+define('URL', 'http://localhost/SIPPMA2/Sistem-Prrestasi-Mahasiswa/public');
 define('BASECSS', 'http://localhost/SIPPMA2/Sistem-Prrestasi-Mahasiswa/public/css');
 define('BASEIMG', 'http://localhost/SIPPMA2/Sistem-Prrestasi-Mahasiswa/public/img');
 

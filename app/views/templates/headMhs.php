@@ -44,9 +44,9 @@
                         <img src="<?=BASEIMG?>/Profile_Icon.png" alt="Profile Icon" class="menu-icon">Profile
                     </a>
                     <a href="<?=URL?>/mahasiswa/input_prestasi" class="menu-item">
-                        <img src="<?=BASEIMG?>/Validasi_Icon.png" alt="Validasi Icon" class="menu-icon">Validasi Prestasi
+                        <img src="<?=BASEIMG?>/Edit_Icon.png" alt="Validasi Icon" class="menu-icon">Input Prestasi
                     </a>
-                    <a href="<?=URL?>/mahasiswa/cetakPrestasi_Mhs" class="menu-item">
+                    <a href="<?=URL?>/mahasiswa/cetakprestasi" class="menu-item">
                         <img src="<?=BASEIMG?>/Cetak_Icon.png" alt="Cetak Icon" class="menu-icon">Cetak Prestasi
                     </a>
                     <a href="<?=URL?>/mahasiswa/bantuan_Mhs" class="menu-item">

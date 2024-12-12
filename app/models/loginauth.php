@@ -38,7 +38,7 @@ class LoginAuth {
                 exit;
             } elseif (!empty($result['id_mhs'])) {
                 $_SESSION['mahasiswa'] = $this->username;
-                header('Location: ' . URL . '/mahasiswa/');
+                header('Location: ' . URL . '/mahasiswa/beranda');
                 exit;
             }
         } else {
