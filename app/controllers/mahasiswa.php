@@ -15,7 +15,7 @@ class Mahasiswa extends Controller{
         $data['judul'] = 'Profil';
         $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
         $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
-        $data['prodi'] = $this->model('UserMahasiswa')->getProdiMahasiswa($data['NIM']);
+        $data['prodi'] = $this->model('UserMahasiswa')->getProdiMahasiswa($data['nama_prodi']);
         $this->view('templates/headMhs', $data);  
         $this->view('mahasiswa/profil', $data);
           

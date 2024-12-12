@@ -20,11 +20,11 @@
                     </div>
                     <div class="profile-form-group">
                         <label for="studi">Program Studi</label>
-                        <input type="text" id="studi" value="D-IV Teknik Informatika">
+                        <input type="text" id="studi" value="D-IV Teknik Informatika"><?=$data['prodi']?>
                     </div>
                     <div class="profile-form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" value="alvinnooo00@gmail.com"">
+                        <input type="email" id="email" value="alvinnooo00@gmail.com">
                     </div>
                     <button type="submit" class="profile-btn-simpan">Simpan</button>
                 </form>
