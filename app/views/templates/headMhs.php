@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="<?= BASECSS?>/prestasi.css">
     <link rel="stylesheet" href="<?= BASECSS?>/printPrestasi.css">
     <link rel="stylesheet" href="<?= BASECSS?>/profile.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
+    <script src="<?= URL ?>/js/print.js"></script>
+
 </head>
 <body>
     <div class="container">

@@ -72,6 +72,17 @@ class Mahasiswa extends Controller{
           
     }
 
+    public function printFile (){
+        $data['judul'] = 'printFile';
+        $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
+        $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
+        $data['prestasi'] = $this->model('UserMahasiswa')->getPrestasiByMahasiswa($data['NIM']);
+        $this->view('templates/headMhs', $data);  
+        $this->view('mahasiswa/printFile', $data);
+          
+    }
+
     public function formInput()
     {
         $data['judul'] = 'Form Input Prestasi';
