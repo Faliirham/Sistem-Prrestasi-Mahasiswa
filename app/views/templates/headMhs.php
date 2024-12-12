@@ -35,6 +35,7 @@
                     <img src="<?=BASEIMG?>/profil.png" alt="Profile" class="profile-img">
                     <h3 class="profile-name"><?=$data['namaMhs']?></h3>
                     <p class="profile-name"><?=$data['NIM']?></p>
+                    <p class="profile-name"><?=$data['prodi']?></p>
                 </div>
                 <nav class="menu">
                     <a href="<?=URL?>/mahasiswa/index" class="menu-item"> 
@@ -44,12 +45,12 @@
                         <img src="<?=BASEIMG?>/Profile_Icon.png" alt="Profile Icon" class="menu-icon">Profile
                     </a>
                     <a href="<?=URL?>/mahasiswa/input_prestasi" class="menu-item">
-                        <img src="<?=BASEIMG?>/Edit_Icon.png" alt="Validasi Icon" class="menu-icon">Input Prestasi
+                        <img src="<?=BASEIMG?>/Leaderboard_Icon.png" alt="Validasi Icon" class="menu-icon">Prestasi
                     </a>
                     <a href="<?=URL?>/mahasiswa/cetakprestasi" class="menu-item">
                         <img src="<?=BASEIMG?>/Cetak_Icon.png" alt="Cetak Icon" class="menu-icon">Cetak Prestasi
                     </a>
-                    <a href="<?=URL?>/mahasiswa/bantuan_Mhs" class="menu-item">
+                    <a href="<?=URL?>/mahasiswa/bantuan" class="menu-item">
                         <img src="<?=BASEIMG?>/Help_Icon.png" alt="bantuan Icon" class="menu-icon">Bantuan
                     </a>
                 </nav>

@@ -49,7 +49,7 @@
             <div class="features-list">
             <div class="feature">
                 <div class="feature-image">
-                    <img src="../img/Leaderboard-page.png" alt="Leaderboard">
+                    <img src="<?= BASEIMG ?>/Leaderboard-page.png" alt="Leaderboard">
                 </div>
                 <h3>Leaderboard</h3>
                 <p>Jadilah yang terdepan! Fitur ini menampilkan peringkat prestasi Anda 
@@ -57,7 +57,7 @@
             </div>
             <div class="feature">
                 <div class="feature-image">
-                    <img src="../img/InputPrestasi-page.png" alt="Input Prestasi">
+                    <img src="<?= BASEIMG ?>/InputPrestasi-page.png" alt="Input Prestasi">
                 </div>
                 <h3>Input Prestasi</h3>
                 <p>Catat setiap prestasi Anda dengan mudah! Jangan biarkan satu pun 
@@ -65,7 +65,7 @@
             </div>
             <div class="feature">
                 <div class="feature-image">
-                    <img src="../img/ValidasiInput-page.png" alt="Validasi Input">
+                    <img src="<?= BASEIMG ?>/ValidasiInput-page.png" alt="Validasi Input">
                 </div>
                 <h3>Validasi Input</h3>
                 <p>Permudah proses validasi data prestasi mahasiswa! Fitur ini 
@@ -73,7 +73,7 @@
             </div>
             <div class="feature">
                 <div class="feature-image">
-                    <img src="../img/CetakPrestasi-page.png" alt="Cetak Prestasi">
+                    <img src="<?= BASEIMG ?>/CetakPrestasi-page.png" alt="Cetak Prestasi">
                 </div>
                 <h3>Cetak Prestasi</h3>
                 <p>Hasilkan laporan prestasi resmi dari data yang telah diinput 

@@ -5,6 +5,7 @@ class Mahasiswa extends Controller{
         $data['judul'] = 'Beranda';
         $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
         $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
         $data['agenda'] = $this->model('UserMahasiswa')->getAgenda();
         $data['leaderboard']=$this->model('UserMahasiswa')->getLeaderboard();
         $this->view('templates/headMhs', $data);  
@@ -14,18 +15,36 @@ class Mahasiswa extends Controller{
 
     public function profil (){
         $data['judul'] = 'Profil';
-        $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
-        $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
-        $data['prodi'] = $this->model('UserMahasiswa')->getProdiMahasiswa($data['nama_prodi']);
+        $data['namaMhs'] = $this->model('UserMahasiswa')->getDataProfil('nama_mhs');
+        $data['NIM'] = $this->model('UserMahasiswa')->getDataProfil('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
+        $data['email'] = $this->model('UserMahasiswa')->getDataProfil('email_mhs');
         $this->view('templates/headMhs', $data);  
         $this->view('mahasiswa/profil', $data);
-          
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $nama_mhs = $_POST['nama_mhs'];
+            $email_mhs = $_POST['email_mhs'];
+            $nama_prodi = $_POST['nama_prodi'];
+            
+            // Memanggil method update di model
+            $updateSuccess = $this->model('UserMahasiswa')->updateProfilMahasiswa($data['NIM'], $nama_mhs, $email_mhs, $nama_prodi);
+            
+            if ($updateSuccess) {
+                // Jika update berhasil, beri pesan sukses
+                $data['message'] = 'Data berhasil diperbarui!';
+            } else {
+                // Jika update gagal, beri pesan error
+                $data['message'] = 'Gagal memperbarui data.';
+            }
+        }    
     }
 
     public function cetakprestasi (){
         $data['judul'] = 'cetakprestasi';
         $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
         $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
         $data['prestasi'] = $this->model('UserMahasiswa')->getPrestasiByMahasiswa($data['NIM']);
         $this->view('templates/headMhs', $data);  
         $this->view('mahasiswa/cetakprestasi', $data);
@@ -36,9 +55,20 @@ class Mahasiswa extends Controller{
         $data['judul'] = 'input_prestasi';
         $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
         $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
         $data['prestasi'] = $this->model('UserMahasiswa')->getPrestasiByMahasiswa($data['NIM']);
         $this->view('templates/headMhs', $data);  
         $this->view('mahasiswa/input_prestasi', $data);
+          
+    }
+
+    public function bantuan (){
+        $data['judul'] = 'Bantuan';
+        $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
+        $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
+        $this->view('templates/headMhs', $data);  
+        $this->view('mahasiswa/bantuan', $data);
           
     }
 
@@ -47,6 +77,7 @@ class Mahasiswa extends Controller{
         $data['judul'] = 'Form Input Prestasi';
         $data['namaMhs'] = $this->model('UserMahasiswa')->getData('nama_mhs');
         $data['NIM'] = $this->model('UserMahasiswa')->getData('id_mhs');
+        $data['prodi'] = $this->model('UserMahasiswa')->getDataProfil('nama_prodi');
     
         // Cek apakah form telah disubmit
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

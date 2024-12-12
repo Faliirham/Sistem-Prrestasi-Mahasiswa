@@ -59,16 +59,60 @@ class UserMahasiswa {
         return $result;
     }
 
-    public function getProdiMahasiswa($id_mhs) {
-        $query = "SELECT p.id_mhs, p.nama_mhs, p.email_mhs, k.nama_prodi
+    public function getProfilMahasiswa() {
+        if (isset($_SESSION['mahasiswa'])) {
+            $this->username = $_SESSION['mahasiswa'];
+            $query = "SELECT p.id_mhs, p.nama_mhs, p.email_mhs, k.nama_prodi
                   FROM Mahasiswa p
                   JOIN prodi k ON p.id_prodi = k.id_prodi
-                  WHERE p.id_mhs = :id_mhs";
+                  WHERE p.id_mhs = :username";
+            $this->db->query($query);
+            $this->db->bind(':username', $this->username);
+            $result = $this->db->single();
+
+            if ($result) {
+                return $result; // Mengembalikan data pengguna
+            } else {
+                // Tangani kasus jika tidak ada data ditemukan
+                echo "Data pengguna tidak ditemukan.";
+                return null;
+            }
+        }
+    }
+
+    public function getDataProfil($field) {
+        $userData = $this->getProfilMahasiswa();
+        if ($userData) {
+            // Periksa apakah kolom yang diminta ada dalam hasil
+            if (isset($userData[$field])) {
+                return $userData[$field]; // Mengembalikan nilai dari kolom yang diminta
+            } else {
+                return 'Kolom tidak ditemukan'; // Jika kolom tidak ada
+            }
+        } else {
+            return 'Pengguna tidak ditemukan'; // Alternatif jika tidak ada data
+        }
+    }
+
+    public function updateProfilMahasiswa($id_mhs, $nama_mhs, $email_mhs, $nama_prodi) {
+        // Menyiapkan query update
+        $query = "UPDATE Mahasiswa 
+                  SET nama_mhs = :nama_mhs, email_mhs = :email_mhs, id_prodi = (SELECT id_prodi FROM prodi WHERE nama_prodi = :nama_prodi)
+                  WHERE id_mhs = :id_mhs";
+
+        // Menjalankan query
         $this->db->query($query);
-        $this->db->bind(':id_mhs', (int)$id_mhs);
-        $result = $this->db->resultSet();
-    
-        return $result;
+        $this->db->bind(':nama_mhs', $nama_mhs);
+        $this->db->bind(':email_mhs', $email_mhs);
+        $this->db->bind(':nama_prodi', $nama_prodi);
+        $this->db->bind(':id_mhs', $id_mhs);
+
+        // Mengeksekusi query
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getLeaderboard (){

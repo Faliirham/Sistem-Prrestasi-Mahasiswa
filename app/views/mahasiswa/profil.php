@@ -12,22 +12,26 @@
                 <form action="#" method="post">
                     <div class="profile-form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" id="nama" value=""><?=$data['namaMhs']?>
+                        <input type="text" id="nama" value="<?= htmlspecialchars($data['namaMhs'] ?? 'Data tidak ada'); ?>">
                     </div>
                     <div class="profile-form-group">
                         <label for="nip">NIM</label>
-                        <input type="text" id="nip" value=""><?=$data['NIM']?>
+                        <input type="text" id="nip" value="<?= htmlspecialchars($data['NIM'] ?? 'Data tidak ada'); ?>" disabled>
                     </div>
                     <div class="profile-form-group">
                         <label for="studi">Program Studi</label>
-                        <input type="text" id="studi" value="D-IV Teknik Informatika"><?=$data['prodi']?>
+                        <input type="text" id="studi" value="<?= htmlspecialchars($data['prodi'] ?? 'Data tidak ada'); ?>">
                     </div>
                     <div class="profile-form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" value="alvinnooo00@gmail.com">
+                        <input type="email" id="email" value="<?= htmlspecialchars($data['email'] ?? 'Data tidak ada'); ?>">
                     </div>
                     <button type="submit" class="profile-btn-simpan">Simpan</button>
                 </form>
+                <!-- Menampilkan pesan jika ada -->
+                <?php if (isset($data['message'])): ?>
+                    <div class="message"><?= htmlspecialchars($data['message']); ?></div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
