@@ -19,7 +19,7 @@
                 IPP<span class="highlight">MA</span>
             </h1>
             <div class="logout">
-            <button onclick="window.location.href='<?= BASEURL ?>/login/logout'">Logout</button>
+            <button onclick="window.location.href='<?= URL ?>/login/logout'">Logout</button>
             </div>
         </header>
         <div class="main">
@@ -30,13 +30,13 @@
                     <p class="profile-name"><?=$data['NIP']?></p>
                 </div>
                 <nav class="menu">
-                    <a href="<?=BASEURL?>/admin/beranda" class="menu-item"> 
+                    <a href="<?=URL?>/admin/beranda" class="menu-item"> 
                         <img src="<?=BASEIMG?>/Beranda_Icon.png" alt="Beranda Icon" class="menu-icon">Beranda
                     </a>
-                    <a href="<?=BASEURL?>/admin/profile" class="menu-item">
+                    <a href="<?=URL?>/admin/profile" class="menu-item">
                         <img src="<?=BASEIMG?>/Profile_Icon.png" alt="Profile Icon" class="menu-icon">Profile
                     </a>
-                    <a href="<?=BASEURL?>/admin/validasi" class="menu-item">
+                    <a href="<?=URL?>/admin/validasi" class="menu-item">
                         <img src="<?=BASEIMG?>/Validasi_Icon.png" alt="Validasi Icon" class="menu-icon">Validasi Prestasi
                     </a>
                 </nav>
