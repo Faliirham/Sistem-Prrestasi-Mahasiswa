@@ -45,41 +45,51 @@
             <?php endif; ?>
         </div>
         <section id="features" class="features">
-            <h2>Fitur Utama</h2>
+            <h2>Fitur</h2>
             <div class="features-list">
             <div class="feature">
+            <a href="formInputPrestasi_Mhs.php">
                 <div class="feature-image">
-                    <img src="<?= BASEIMG ?>/Leaderboard-page.png" alt="Leaderboard">
-                </div>
-                <h3>Leaderboard</h3>
-                <p>Jadilah yang terdepan! Fitur ini menampilkan peringkat prestasi Anda 
-                    secara real-time, memotivasi untuk terus meningkatkan performa.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-image">
-                    <img src="<?= BASEIMG ?>/InputPrestasi-page.png" alt="Input Prestasi">
+                    <img src="../img/InputPrestasi-page.png" alt="Input Prestasi">
                 </div>
                 <h3>Input Prestasi</h3>
                 <p>Catat setiap prestasi Anda dengan mudah! Jangan biarkan satu pun 
                     prestasi anda tidak diketahui oleh orang lain </p>
+            </a>
             </div>
             <div class="feature">
+            <a href="printPrestasi_Mhs.php">
                 <div class="feature-image">
-                    <img src="<?= BASEIMG ?>/ValidasiInput-page.png" alt="Validasi Input">
-                </div>
-                <h3>Validasi Input</h3>
-                <p>Permudah proses validasi data prestasi mahasiswa! Fitur ini 
-                    memastikan setiap pencatatan prestasi yang diinput sudah akurat dan sesuai.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-image">
-                    <img src="<?= BASEIMG ?>/CetakPrestasi-page.png" alt="Cetak Prestasi">
+                    <img src="../img/CetakPrestasi-page.png" alt="Cetak Prestasi">
                 </div>
                 <h3>Cetak Prestasi</h3>
                 <p>Hasilkan laporan prestasi resmi dari data yang telah diinput 
                     dan divalidasi! Laporan ini siap digunakan sebagai dokumentasi akademik</p>
+            </a>
             </div>
             </div>
         </section>
+        <div class="faq-content">
+            <div class="faq-container">
+                <h1>Pertanyaan Tentang SIPPMA</h1>
+                <div class="faq-item">
+                    <button onclick="toggleAnswer(this)">Apa itu Sistem Pencatatan Prestasi Mahasiswa?</button>
+                    <div class="answer">SIPPMA adalah sistem yang digunakan untuk mencatat semua prestasi mahasiswa secara terpusat.</div>
+                </div>
+                <div class="faq-item">
+                    <button onclick="toggleAnswer(this)">Bagaimana alur pencatatan prestasi mahasiswa?</button>
+                    <div class="answer">Mahasiswa mengisi data prestasi di portal SIPPMA, diverifikasi oleh admin, dan diarsipkan.</div>
+                </div>
+                <div class="faq-item">
+                    <button onclick="toggleAnswer(this)">Bagaimana cara menjadi leaderboard?</button>
+                    <div class="answer">Mahasiswa dengan jumlah poin prestasi terbanyak akan masuk leaderboard.</div>
+                </div>
+                <div class="faq-item">
+                    <button onclick="toggleAnswer(this)">Cetak Prestasi Berfungsi untuk apa?</button>
+                    <div class="answer">Fitur ini digunakan untuk mencetak bukti prestasi yang dapat digunakan untuk keperluan administratif.</div>
+                </div>
+                <script src="js/faq.js" ></script>
+            </div>
+        </div>
     </div>
 </main>
