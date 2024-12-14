@@ -86,7 +86,7 @@
 }
 
 .tambah-data:hover {
-    opacity: 0.9;
+    opacity: 1
 }
 
 /* Popup */
@@ -112,7 +112,7 @@
     width: 50%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .close-btn-prestasi,
@@ -162,6 +162,10 @@
     border-radius: 20px;
     font-size: 14px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.input-user-form-group input[type="radio"] {
+    padding: 5px
 }
 
 .input-prestasi-form-actions,
