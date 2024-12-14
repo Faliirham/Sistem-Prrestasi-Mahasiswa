@@ -2,23 +2,28 @@
             <div class="validasi-input-title">
                 <h2>Input Prestasi</h2>
                 <div class="validasi-input-container">
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="<?=BASEURL?>/admin/updateStatus" method="post" enctype="multipart/form-data">
                        
                         <div class="validasi-input-form-group">
                             <label for="nama-mahasiswa">Nama Mahasiswa</label>
                             <input type="text" id="nama-mahasiswa" placeholder="Nama Mahasiswa">
                         </div>
                         <div class="validasi-input-form-group">
-                            <label for="nama-prestasi">Nama Prestasi</label>
-                            <input type="text" id="nama-prestasi" placeholder="Nama Prestasi">
+                            <label for="nama-prestasi">Nama Perlombaan</label>
+                            <input type="text" id="nama-prestasi" placeholder="Nama Perlombaan">
                         </div>
                         <div class="validasi-input-form-group">
-                            <label for="penyelenggara">Penyelenggara</label>
-                            <input type="text" id="penyelenggara" placeholder="Penyelenggara">
+                            <label for="juara">Juara</label>
+                            <select id="juara">
+                                <option value="Juara 1">Juara 1</option>
+                                <option value="Juara 2">Juara 2</option>
+                                <option value="Juara 3">Juara 3</option>
+                                <option value="Juara Harapan">Juara Harapan</option>
+                            </select>
                         </div>
                         <div class="validasi-input-form-group">
                             <label for="tanggal-juara">Tanggal Juara</label>
-                            <input type="text" id="tanggal-juara" placeholder="DD/MM/YYYY">
+                            <input type="date" id="tanggal-juara" placeholder="DD/MM/YYYY">
                         </div>
                         <div class="validasi-input-form-group">
                             <label for="tingkat-kompetisi">Tingkat Kompetisi</label>
@@ -76,9 +81,9 @@
                             </div>
                         </div>
             
-                        <div class="validasi-input-form-group">
-                            <label for="point-sertifikat">Point Sertifikat</label>
-                            <input type="text" id="point-sertifikat" placeholder="Point Sertifikat">
+                        <div class="validasi-input-form-group point-sertifikat-container">
+                            <label for="point-sertifikat" class="point-sertifikat-label">Point Sertifikat</label>
+                            <span id="point-sertifikat" class="point-sertifikat"></span>
                         </div>
                         <div class="validasi-input-form-group">
                             <label for="pesan-validasi">Pesan Validasi</label>
@@ -86,12 +91,12 @@
                         </div>
                         
                         <div class="validasi-input-form-actions">
-                            <button type="button" class="back" onclick="window.location.href='validasiPrestasi_Admin.php'">← Kembali</button>
-                            <button type="reset" class="validasi-input-btn-tolak">Tolak</button>
-                            <button type="submit" class="validasi-input-btn-terima">Terima</button>
+                            <button type="button" class="back" onclick="window.location.href='<?=BASEURL?>/admin/prestasi'">← Kembali</button>
+                            <button type="button" name="Tolak" class="validasi-input-btn-tolak">Tolak</button>
+                            <button type="submit" name="Terima" class="validasi-input-btn-terima">Terima</button>
                         </div>
                     </form>
-                </div>
+                </div>  
             </div>
         </main>
     </div>

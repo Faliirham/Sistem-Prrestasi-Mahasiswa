@@ -7,7 +7,7 @@
         <p><span>*Maksimal Pengeditan 1 hari (lebih dari itu data tidak bisa diubah)</span></p>
     </div>
     <div class="validasi-message-container">
-    <button class="tambah-data" onclick="window.location.href='<?= URL ?>/mahasiswa/formInput'">Tambah Data</button>
+    <button class="tambah-data" onclick="window.location.href='<?= BASEURL ?>/mahasiswa/formInput'">Tambah Data</button>
         <table>
             <thead>
                 <tr>

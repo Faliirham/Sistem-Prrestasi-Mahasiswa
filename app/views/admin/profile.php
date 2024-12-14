@@ -6,7 +6,7 @@
                 <h1>Data diri Admin</h1>
                 <div class="profile-content">
                     <div class="profile-picture">
-                        <img src="https://via.placeholder.com/130" alt="Profile Picture">
+                        <img src="<?=BASEIMG?>/admin.jpg" alt="Profile Picture">
                         <div>
                         <button class="profile-btn-ubah">Ubah Foto</button>
                         </div>

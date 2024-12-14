@@ -2,7 +2,7 @@
     <div class="validasi-input-title">
         <h2>Input Prestasi</h2>
         <div class="validasi-input-container">
-            <form action="<? URL ?>/mahasiswa/formInput" method="post" enctype="multipart/form-data">                
+            <form action="<? BASEURL ?>/mahasiswa/formInput" method="post" enctype="multipart/form-data">                
                 <div class="validasi-input-form-group">
                     <label for="nama-mahasiswa">Nama Mahasiswa
                         <span style="color: red;">*</span>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="validasi-input-form-actions">
                     <p>*Pastikan Data yang anda masukkan telah sesuai !</p>
-                    <button type="reset" class="validasi-input-btn-batal" onclick="window.location.href='<?= URL ?>/mahasiswa/input_prestasi'">Batal</button>
+                    <button type="reset" class="validasi-input-btn-batal" onclick="window.location.href='<?= BASEURL ?>/mahasiswa/input_prestasi'">Batal</button>
                     <button type="submit" class="validasi-input-btn-unggah">Unggah</button>
                 </div>
             </form>

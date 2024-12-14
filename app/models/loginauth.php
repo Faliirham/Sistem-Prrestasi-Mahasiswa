@@ -25,7 +25,7 @@ class LoginAuth {
         // Cek hasil query
         if (!$result) {
             echo "<script>alert('Username atau Password salah');
-            window.location.href = '" . URL . "/login'</script>";
+            window.location.href = '" . BASEURL . "/login'</script>";
             exit;
         }
 
@@ -34,24 +34,24 @@ class LoginAuth {
             // Username ditemukan, simpan ke session berdasarkan role
             if (!empty($result['id_admin'])) {
                 $_SESSION['admin'] = $this->username;
-                header('Location: ' . URL . '/admin/beranda');
+                header('Location: ' . BASEURL . '/admin/beranda');
                 exit;
             } elseif (!empty($result['id_mhs'])) {
                 $_SESSION['mahasiswa'] = $this->username;
-                header('Location: ' . URL . '/mahasiswa/beranda');
+                header('Location: ' . BASEURL . '/mahasiswa/');
                 exit;
             }
         } else {
             // Username tidak sesuai
             echo "<script>alert('User Tidak Ditemukan');
-            window.location.href = '" . URL . "/login'</script>";
+            window.location.href = '" . BASEURL . "/login'</script>";
             exit;
         }
     }
 
     public function logout() {
         session_destroy();
-        header('Location: ' . URL . '/login');
+        header('Location: ' . BASEURL . '/login');
         exit;
     }
 
@@ -65,14 +65,14 @@ class LoginAuth {
         // Validasi password baru dan konfirmasi password
         if ($newPass !== $confirmPass) {
             echo "<script>alert('Password baru dan konfirmasi password harus sama');
-             window.location.href = '" . URL . "/login/forgot'</script>";
+             window.location.href = '" . BASEURL . "/login/forgot'</script>";
             exit;
         }
     
         // Validasi panjang password
         if (strlen($newPass) < 6) {
             echo "<script>alert('Password harus memiliki minimal 6 karakter');
-            window.location.href = '" . URL . "/login/forgot'</script>";
+            window.location.href = '" . BASEURL . "/login/forgot'</script>";
         }
     
         if ($role === "mahasiswa") {
@@ -84,7 +84,7 @@ class LoginAuth {
     
             if (!$result || $result['id_mhs'] != $nomorinduk) {
                 echo "<script>alert('Harap Masukkan NIM / Email dengan benar'); 
-                window.location.href = '" . URL . "/login/forgot'</script>";
+                window.location.href = '" . BASEURL . "/login/forgot'</script>";
                 exit;
             }
     
@@ -96,7 +96,7 @@ class LoginAuth {
             $this->db->execute();
     
             echo "<script>alert('Password berhasil diubah') 
-            window.location.href = '" . URL . "/login';</script>";
+            window.location.href = '" . BASEURL . "/login';</script>";
             exit;       
         } elseif ($role === "admin") {
             // Cek email dan nomor induk admin
@@ -107,7 +107,7 @@ class LoginAuth {
     
             if (!$result || $result['id_admin'] != $nomorinduk) {
                 echo "<script>alert('Harap Masukkan ID Admin / Email dengan benar');
-                 window.location.href = '" . URL . "/login/forgot'</script>";
+                 window.location.href = '" . BASEURL . "/login/forgot'</script>";
                 exit;
             }
     
@@ -119,11 +119,11 @@ class LoginAuth {
             $this->db->execute();
     
             echo "<script>alert('Password berhasil diubah') 
-            window.location.href = '" . URL . "/login';</script>";
+            window.location.href = '" . BASEURL . "/login';</script>";
             exit;
         } else {
             echo "<script>alert('Role tidak valid');
-             window.location.href = '" . URL . "/login/forgot'</script>";
+             window.location.href = '" . BASEURL . "/login/forgot'</script>";
             exit;
         }
     }    

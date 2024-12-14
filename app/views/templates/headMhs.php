@@ -18,7 +18,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
-    <script src="<?= URL ?>/js/print.js"></script>
+    <script src="<?= BASEURL ?>/js/print.js"></script>
 
 </head>
 <body>
@@ -43,19 +43,19 @@
                     <p class="profile-name"><?=$data['prodi']?></p>
                 </div>
                 <nav class="menu">
-                    <a href="<?=URL?>/mahasiswa/index" class="menu-item"> 
+                    <a href="<?=BASEURL?>/mahasiswa/index" class="menu-item"> 
                         <img src="<?=BASEIMG?>/Beranda_Icon.png" alt="Beranda Icon" class="menu-icon">Beranda
                     </a>
-                    <a href="<?=URL?>/mahasiswa/profil" class="menu-item">
+                    <a href="<?=BASEURL?>/mahasiswa/profil" class="menu-item">
                         <img src="<?=BASEIMG?>/Profile_Icon.png" alt="Profile Icon" class="menu-icon">Profile
                     </a>
-                    <a href="<?=URL?>/mahasiswa/input_prestasi" class="menu-item">
+                    <a href="<?=BASEURL?>/mahasiswa/input_prestasi" class="menu-item">
                         <img src="<?=BASEIMG?>/Leaderboard_Icon.png" alt="Validasi Icon" class="menu-icon">Prestasi
                     </a>
-                    <a href="<?=URL?>/mahasiswa/cetakprestasi" class="menu-item">
+                    <a href="<?=BASEURL?>/mahasiswa/cetakprestasi" class="menu-item">
                         <img src="<?=BASEIMG?>/Cetak_Icon.png" alt="Cetak Icon" class="menu-icon">Cetak Prestasi
                     </a>
-                    <a href="<?=URL?>/mahasiswa/bantuan" class="menu-item">
+                    <a href="<?=BASEURL?>/mahasiswa/bantuan" class="menu-item">
                         <img src="<?=BASEIMG?>/Help_Icon.png" alt="bantuan Icon" class="menu-icon">Bantuan
                     </a>
                 </nav>

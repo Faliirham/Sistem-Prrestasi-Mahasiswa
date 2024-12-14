@@ -236,17 +236,17 @@ class UserMahasiswa {
             )
         ";
     
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':id_mhs', $idMahasiswa);
-        $stmt->bindParam(':nama_lomba', $data['namaLomba']);
-        $stmt->bindParam(':id_Kategori', $kategoriId);
-        $stmt->bindParam(':Juara', $data['juara']);
-        $stmt->bindParam(':Tanggal_juara', $data['tanggalJuara']);
-        $stmt->bindParam(':Sertif', file_get_contents($data['sertifikat']['tmp_name']), PDO::PARAM_LOB);
-        $stmt->bindParam(':foto', file_get_contents($data['foto']['tmp_name']), PDO::PARAM_LOB);
-        $stmt->bindParam(':surat_tgs', file_get_contents($data['suratTugas']['tmp_name']), PDO::PARAM_LOB);
-        $stmt->bindParam(':karya', file_get_contents($data['proposal']['tmp_name']), PDO::PARAM_LOB);
-        $stmt->bindParam(':id_point', $idPoint);
+        $stmt = $this->db->query($query);
+        $stmt->bind(':id_mhs', $idMahasiswa);
+        $stmt->bind(':nama_lomba', $data['namaLomba']);
+        $stmt->bind(':id_Kategori', $kategoriId);
+        $stmt->bind(':Juara', $data['juara']);
+        $stmt->bind(':Tanggal_juara', $data['tanggalJuara']);
+        $stmt->bind(':Sertif', file_get_contents($data['sertifikat']['tmp_name']), PDO::PARAM_LOB);
+        $stmt->bind(':foto', file_get_contents($data['foto']['tmp_name']), PDO::PARAM_LOB);
+        $stmt->bind(':surat_tgs', file_get_contents($data['suratTugas']['tmp_name']), PDO::PARAM_LOB);
+        $stmt->bind(':karya', file_get_contents($data['proposal']['tmp_name']), PDO::PARAM_LOB);
+        $stmt->bind(':id_point', $idPoint);
     
         return $stmt->execute();
     }    

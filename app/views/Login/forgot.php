@@ -15,12 +15,31 @@
                     <img src="<?= BASEIMG ?>/Logo_SIPPMA.png" alt="Logo" class="logo">
                 </div>
                 <h2>CHANGE PASSWORD</h2>
-                <form action="" method="post">
-                    <input type="text" name="nim" placeholder="NIM" required>
-                    <input type="text" name="email" placeholder="EMAIL" required>
-                    <input type="password" name="new password" placeholder="NEW PASSWORD" required>
-                    <input type="password" name="comfirm password" placeholder="CONFIRM PASSWORD" required>
-                    <button type="submit">UPDATE</button>
+                <form action="<?=BASEURL?>/login/reset" method="POST">
+                    <div class="validasi-input-form-group">
+                        <input type="text" name="nim" id="nim" placeholder="NIM / NIP" required>
+                    </div> 
+                    <div class="validasi-input-form-group">
+                        <select name="role" id="role" required>
+                            <option value=" ">ROLE</option>
+                            <option value="admin">Admin</option>
+                            <option value="mahasiswa">Mahasiswa</option>
+                        </select>
+                    </div>
+                    <div class="validasi-input-form-group">
+                        <input type="text" name="email" id="email" placeholder="EMAIL" required>
+                    </div>
+                    <div class="validasi-input-form-group">
+                        <input type="password" name="new_password" id="new_password" placeholder="NEW PASSWORD" required>
+                    </div>
+                    <div class="validasi-input-form-group">
+                        <input type="password" name="confirm_password" id="confirm_password" placeholder="CONFIRM PASSWORD" required>
+                    </div>
+                   
+                    <div class="button-container">
+                        <button type="button" class="back-button" onclick="window.location.href='<?= BASEURL ?>/login/'">BACK</button>
+                        <button type="submit">UPDATE</button>
+                    </div>
                 </form>
             </div>
         </div>

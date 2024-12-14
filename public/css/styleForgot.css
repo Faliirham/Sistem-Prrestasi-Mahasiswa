@@ -11,7 +11,7 @@ body {
 }
 
 .background {
-    background: url('../img/Background.jpg') no-repeat center center/cover;
+    background: url('http://localhost/Sistem_Prestasi_Mahasiswa/public/img/Background.jpg') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ body {
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.0); 
+    background: rgba(0, 0, 0, 0.4); /* Adjust opacity for overlay */
     flex: 1;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ body {
     border-radius: 12px;
     padding: 30px;
     width: 350px;
-    height: 500px;
+    height: auto; /* Adjust height to auto for flexibility */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -52,24 +52,44 @@ body {
 h2 {
     font-size: 27px;
     color: #ffffff;
-    margin-bottom: 5px;
+    margin-bottom: 20px; /* Increase margin below h2 */
     border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px; /* Add padding to separate text from the line */
+}
+
+.validasi-input-form-group {
+    margin-bottom: 15px; /* Add bottom margin to separate input fields */
+    text-align: left; /* Align labels to the left */
+}
+
+.validasi-input-form-group label {
+    display: block; /* Ensure labels take the full width */
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+select {
     width: 100%;
     padding: 12px;
     margin: 5px 0;
     border: 1px solid #D9D9D9;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 14px;
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Align buttons to the center */
+    gap: 15px; /* Space between the buttons */
+    margin-top: 20px;
 }
 
+/* Button Styles */
 button {
-    margin-top: 10px;
-    width: 270px;
-    padding: 10px;
+    padding: 12px;
+    background-color: #1DAC98;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -77,19 +97,52 @@ button {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 130px; /* Make buttons smaller */
 }
 
-.update {
-    background-color: #1DAC98;
+button:hover {
+    background-color: #047062;
 }
 
-.back {
-    background-color: #E03616;
+/* Custom style for Back button */
+button.back-button {
+    background-color: #FF6347; /* Different color for Back button */
+}
+
+button.back-button:hover {
+    background-color: #D85C3D; /* Hover color for Back button */
+}
+.forgot-container {
+    margin-top: 15px;
+}
+
+.forgot-link {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .login-card {
         width: 90%;
+    }
+    .logo {
+        width: 80px; /* Adjust logo size for smaller screens */
+    }
+    h2 {
+        font-size: 24px; /* Adjust heading size for smaller screens */
+    }
+    input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 14px; /* Adjust input text size */
+    }
+    button {
+        width: 100%; /* Make button full width on small screens */
     }
 }

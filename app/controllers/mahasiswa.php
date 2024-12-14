@@ -115,7 +115,7 @@ class Mahasiswa extends Controller{
                     ]);
     
                     if ($result) {
-                        header('Location: ' . URL . '/mahasiswa/input_prestasi');
+                        header('Location: ' . BASEURL. '/mahasiswa/input_prestasi');
                         exit;
                     }
                 } catch (Exception $e) {

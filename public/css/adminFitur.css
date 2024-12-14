@@ -1,0 +1,183 @@
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.features h2::before,
+.features h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 38%;
+    height: 3px;
+    background-color: red;
+}
+
+.features h2::before {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.features h2::after {
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.features-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #242F6F;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+    justify-content: space-between;
+}
+
+.feature h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-image img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tambah-data {
+    background-color: #009F58;
+    color: #fff;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.tambah-data:hover {
+    opacity: 0.9;
+}
+
+/* Popup */
+/* Prestasi */
+.popup-prestasi,
+.popup-user {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content-prestasi,
+.popup-content-user {
+    background-color:  white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    opacity: 1;
+}
+
+.close-btn-prestasi,
+.close-btn-user {
+    color: gray;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.input-prestasi-form,
+.input-user-form {
+    position: relative;
+    flex: 1;
+    padding: 20px;
+}
+
+.input-prestasi-form-group,
+.input-user-form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-prestasi-form-group label,
+.input-user-form-group label {
+    width: 40%;
+    padding-right: 30px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.input-prestasi-form-group input,
+.input-prestasi-form-group select,
+.input-user-form-group input[type="text"],
+.input-user-form-group input[type="password"],
+.input-user-form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.input-prestasi-form-actions,
+.input-user-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 0px;
+}
+
+.input-prestasi-btn-unggah,
+.input-user-btn-unggah {
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #009F58;
+    color: white;
+}
+
+.input-prestasi-btn-unggah:hover,
+.input-user-btn-unggah:hover {
+    opacity: 1;
+}
+

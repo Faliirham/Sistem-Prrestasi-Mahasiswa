@@ -30,7 +30,7 @@
             </tbody>
         </table>
         <div class="btn-cetak">
-            <button  onclick="window.location.href='<?= URL ?>/mahasiswa/printFile'"><img src="<?=BASEIMG?>/Cetak_Icon.png" alt="cetak">Cetak</button>
+            <button  onclick="window.location.href='<?= BASEURL ?>/mahasiswa/printFile'"><img src="<?=BASEIMG?>/Cetak_Icon.png" alt="cetak">Cetak</button>
         </div>
     </div>
 </div>

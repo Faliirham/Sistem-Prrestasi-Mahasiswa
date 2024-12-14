@@ -12,4 +12,7 @@ class Login extends Controller {
     public function forgot() {
         $this->view('Login/forgot');
     }
+    public function reset() {
+        $this->model('loginauth')->reset();
+    }
 }
