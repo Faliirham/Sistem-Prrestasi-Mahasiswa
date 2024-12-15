@@ -1,14 +1,14 @@
-<div class="main-content">
+<div class="main-content-cetak">
     <div class="content-cetak">
-        <div class="file" id="file">                    
-            <div class="template">
+        <div class="file-cetak" id="file">                    
+            <div class="template-cetak">
                 <img src="<?= BASEIMG ?>/Template_Cetak.png" alt="Template_Cetak">
             </div>
-            <div class="data-overlay">
-                <div class="user-data">
-                    <p>Nim<span class="tab1"></span>: <?= htmlspecialchars($data['NIM']) ?></p>
-                    <p>Nama<span class="tab2"></span>: <?= htmlspecialchars($data['namaMhs']) ?></p>
-                    <p>Program Studi<span class="tab3"></span>: <?= htmlspecialchars($data['prodi']) ?></p>                            
+            <div class="data-overlay-cetak">
+                <div class="user-data-cetak">
+                    <p>Nim<span class="tab1-cetak"></span>: <?= htmlspecialchars($data['NIM']) ?></p>
+                    <p>Nama<span class="tab2-cetak"></span>: <?= htmlspecialchars($data['namaMhs']) ?></p>
+                    <p>Program Studi<span class="tab3-cetak"></span>: <?= htmlspecialchars($data['prodi']) ?></p>                            
                 </div>
                 <table>
                     <thead>
@@ -38,7 +38,7 @@
                 </table>
             </div>
         </div>
-        <div class="btn-cetak">
+        <div class="btn-cetak-print">
             <button class="btn_print"><img src="../img/Cetak_Icon.png" alt="cetak">Cetak</button>
         </div>
     </div>
@@ -46,6 +46,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
 <script src="<?=BASEJS?>/print.js"></script>
-<link rel="stylesheet" href="<?= BASECSS?>/printPrestasi.css">
 </body>
 </html>

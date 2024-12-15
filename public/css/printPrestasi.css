@@ -1,4 +1,4 @@
-.main-content {
+.main-content-cetak {
     flex: 8;
     background-color: #f4f4f4;
     color: #333;
@@ -8,7 +8,7 @@
     padding: 10px; 
 }
 
-table {
+.data-overlay-cetak table {
     width: 100%; 
     border-collapse: collapse;
     margin-top: 20px;
@@ -16,28 +16,28 @@ table {
     max-width: 100%;
 }
 
-table, th, td {
+.data-overlay-cetak table, th, td {
     border: 1px solid gray;
     padding: 10px;
 }
 
-th, td {
+.data-overlay-cetak th, td {
     text-align: center;
 }
 
-th {
+.data-overlay-cetak th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
 
-.btn-cetak {
+.btn-cetak-print {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     margin-top: 0px;
 }
 
-.btn-cetak button {
+.btn-cetak-print button {
     background-color: #009F58;
     color: white;
     border: none;
@@ -50,23 +50,23 @@ th {
     margin-left: auto;
 }
 
-.btn-cetak button:hover {
+.btn-cetak-print button:hover {
     opacity: 0.9;
 }
 
-.btn-cetak img {
+.btn-cetak-print img {
     height: 20px;
     width: 20px;
     margin-right: 5px;
 }
 
-.file {
+.file-cetak {
     position: relative;
     margin: 0px;
     padding: 0px;
 }
 
-.template img {
+.template-cetak img {
     width: 100%;
     height: auto;
     z-index: 1;;
@@ -74,7 +74,7 @@ th {
 }
 
 
-.data-overlay {
+.data-overlay-cetak {
     position: absolute;
     top: 250px;
     bottom: 100px;
@@ -85,20 +85,20 @@ th {
     -index: 2;
 }
 
-.user-data {
+.user-data-cetak {
     margin-bottom: 20px;
     font-size: 16px;
     color: black;
 }
 
-.tab1 {
+.tab1-cetak {
     margin-left: 90px;
 }
 
-.tab2 {
+.tab2-cetak {
     margin-left: 75px;
 }
 
-.tab3 {
+.tab3-cetak {
     margin-left: 15px;
 }

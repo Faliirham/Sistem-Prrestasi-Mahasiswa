@@ -1,10 +1,10 @@
-<div class="main-content">
-    <section class="welcome">
+<div class="main-content-bantuan">
+    <section class="welcome-bantuan">
         <h2>Bantuan</h2>
         <p>Untuk bantuan lebih lanjut, Anda dapat menghubungi admin melalui kontak di bawah ini:</p>
     </section>
 
-    <div class="contact-info">
+    <div class="contact-info-bantuan">
         <h3>Kontak Admin:</h3>
         <ul>
             <li><strong>Email:</strong> admin@polinema.sch.id</li>
@@ -13,6 +13,5 @@
         </ul>
     </div>
 </div>
-<link rel="stylesheet" href="<?= BASECSS?>/bantuan.css">
 </body>
 </html>

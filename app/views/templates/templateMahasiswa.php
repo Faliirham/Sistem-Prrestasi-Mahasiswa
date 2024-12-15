@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="<?= BASECSS?>/faq.css">
     <link rel="stylesheet" href="<?= BASECSS?>/profile.css">
     <link rel="stylesheet" href="<?= BASECSS?>/prestasi.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/input.css">
     <link rel="stylesheet" href="<?= BASECSS?>/cetakPrestasi.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/printPrestasi.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/bantuan.css">
 </head>
 <body>
     <div class="container">
