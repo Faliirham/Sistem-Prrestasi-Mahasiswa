@@ -1,9 +1,9 @@
     <main class="main-content">
         <div class="validasi-message-title">
-            <h2>Validasi Prestasi</h2>
+            <h2> Prestasi</h2>
         </div>
         <div class="validasi-message-container">
-            <button class="tambah-data" onclick="window.location.href='<?=BASEURL?>/admin/validasiInput'">Tambah Data</button>
+            <button class="tambah-data" onclick="window.location.href='<?=BASEURL?>/admin/input'">Tambah Data</button>
             <table>
                 <thead>
                     <tr>

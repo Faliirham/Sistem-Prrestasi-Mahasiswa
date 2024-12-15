@@ -13,3 +13,6 @@
         </ul>
     </div>
 </div>
+<link rel="stylesheet" href="<?= BASECSS?>/bantuan.css">
+</body>
+</html>

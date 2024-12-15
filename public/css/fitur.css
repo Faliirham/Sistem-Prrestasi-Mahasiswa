@@ -86,11 +86,10 @@
 }
 
 .tambah-data:hover {
-    opacity: 1
+    opacity: 0.9;
 }
 
 /* Popup */
-/* Prestasi */
 .popup-prestasi,
 .popup-user {
     display: none;
@@ -165,7 +164,8 @@
 }
 
 .input-user-form-group input[type="radio"] {
-    padding: 5px
+    padding: 5px;
+    margin-right: 10px;
 }
 
 .input-prestasi-form-actions,

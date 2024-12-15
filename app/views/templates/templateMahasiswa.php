@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="<?=BASEIMG?>/logo_SIPPMA.png">
-    <title>SIPPMA</title>
+    <title>SIPPMA <?=$data['judul']?></title>   
     <link rel="stylesheet" href="<?= BASECSS?>/global.css">
     <link rel="stylesheet" href="<?= BASECSS?>/agenda.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/bantuan.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/cetakPrestasi.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/fitur.css">   
-    <link rel="stylesheet" href="<?= BASECSS?>/input.css">
     <link rel="stylesheet" href="<?= BASECSS?>/leaderboard.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/prestasi.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/printPrestasi.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/profile.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/fitur.css">
     <link rel="stylesheet" href="<?= BASECSS?>/faq.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
-    <script src="<?= BASEURL ?>/js/print.js"></script>
-
+    <link rel="stylesheet" href="<?= BASECSS?>/profile.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/prestasi.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/cetakPrestasi.css">
 </head>
 <body>
     <div class="container">
@@ -32,7 +24,7 @@
                 IPP<span class="highlight">MA</span>
             </h1>
             <div class="logout">
-                <button onclick="window.location.href='../login.php';">Logout</button>
+                <button onclick="window.location.href='<?= BASEURL ?>/login/logout'">Logout</button>
             </div>
         </header>
         <div class="main">
@@ -44,13 +36,13 @@
                     <p class="profile-name"><?=$data['prodi']?></p>
                 </div>
                 <nav class="menu">
-                    <a href="<?=BASEURL?>/mahasiswa/index" class="menu-item"> 
+                    <a href="<?=BASEURL?>/mahasiswa/beranda" class="menu-item"> 
                         <img src="<?=BASEIMG?>/Beranda_Icon.png" alt="Beranda Icon" class="menu-icon">Beranda
                     </a>
-                    <a href="<?=BASEURL?>/mahasiswa/profil" class="menu-item">
+                    <a href="<?=BASEURL?>/mahasiswa/profile" class="menu-item">
                         <img src="<?=BASEIMG?>/Profile_Icon.png" alt="Profile Icon" class="menu-icon">Profile
                     </a>
-                    <a href="<?=BASEURL?>/mahasiswa/input_prestasi" class="menu-item">
+                    <a href="<?=BASEURL?>/mahasiswa/prestasi" class="menu-item">
                         <img src="<?=BASEIMG?>/Leaderboard_Icon.png" alt="Validasi Icon" class="menu-icon">Prestasi
                     </a>
                     <a href="<?=BASEURL?>/mahasiswa/cetakprestasi" class="menu-item">
@@ -64,3 +56,4 @@
                     <p>© polinema.sch.id</p>
                 </footer>
             </aside>
+       

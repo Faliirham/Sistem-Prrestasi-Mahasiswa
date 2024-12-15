@@ -1,7 +1,7 @@
 <main class="main-content">
     <div class="welcome">
         <h2>SELAMAT DATANG <?= htmlspecialchars($data['nama']) ?></h2>
-        
+    
         <section class="agenda">
             <div class="agenda-header">
                 <h2>Agenda Lomba Mahasiswa</h2>
@@ -15,7 +15,7 @@
                                 <img class="edit-icon" src="<?= BASEIMG?>/Edit_icon.png" alt="Edit">
                                 <img class="delete-icon" src="<?= BASEIMG?>/Delete_icon.png" alt="Delete">
                             </div>
-                            <h3 class="agenda-title"><?= htmlspecialchars($agenda['nama_agenda'] ?? 'Nama agenda tidak tersedia') ?></h3>
+                            <h3><?= htmlspecialchars($agenda['nama_agenda'] ?? 'Nama agenda tidak tersedia') ?></h3>
                             <div class="agenda-item-content">
                                 <img class="time-icon" src="<?= BASEIMG ?>/time.png" alt="Time">
                                 <p><?= htmlspecialchars(trim($agenda['tanggal_agenda'] ?? 'Tanggal tidak tersedia')) ?></p>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="leaderboard-ranking">
-            <h3>Ranking</h3>
+            <h1>Ranking</h1>
             <?php foreach ($data['leaderboard'] as $item): ?>
                 <div class="leaderboard-ranking-item">
                     <img src="<?= BASEIMG ?>/juara<?= htmlspecialchars($item['ranking']) ?>.png" alt="Ranking <?= htmlspecialchars($item['ranking']) ?>" class="leaderboard-rank-number">
@@ -68,7 +68,7 @@
         </div>
 
         <section id="features" class="features">
-            <h2>Fitur Tambahan</h2>
+            <h2>Fitur</h2>
             <div class="features-list">
                 <div class="feature">
                     <div class="feature-image">
@@ -79,6 +79,34 @@
                     <button id="tambah-user" class="tambah-data">Tambah</button>
                 </div>
 
+                <div id="popupUser" class="popup-user">
+                    <div class="popup-content-user">
+                        <span class="close-btn-user">&times;</span>
+                        <form class="input-user-form" action="#" method="post" enctype="multipart/form-data">
+                            <div class="input-user-form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="input-user-form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Password" required>
+                            </div>
+                            <div class="input-user-form-group">
+                                <label for="role">Role</label>
+                                <label>
+                                    <input type="radio" name="role" value="mahasiswa">1. MAHASISWA
+                                </label>
+                                <label>
+                                    <input type="radio" name="role" value="admin">2. ADMIN
+                                </label>
+                            </div>
+                            <div class="input-user-form-actions">
+                                <button type="submit" class="input-user-btn-unggah">Tambah</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="feature">
                     <div class="feature-image">
                         <img src="<?= BASEIMG ?>/InputPrestasi-page.png" alt="Validasi Input">
@@ -87,11 +115,26 @@
                     <p>Tambahkan tingkat prestasi baru untuk mencatat pencapaian yang lebih luar biasa.</p>
                     <button id="tambah-prestasi" class="tambah-data">Tambah</button>
                 </div>
+
+                <div id="popupPrestasi" class="popup-prestasi">
+                    <div class="popup-content-prestasi">
+                        <span class="close-btn-prestasi">&times;</span>
+                        <form class="input-prestasi-form" action="#" method="post" enctype="multipart/form-data">
+                            <div class="input-prestasi-form-group">
+                                <label for="nama-prestasi">Tingkat Prestasi</label>
+                                <input type="text" id="nama-prestasi" name="nama-prestasi" placeholder="Tingkat Prestasi" required>
+                            </div>
+                            <div class="input-prestasi-form-actions">
+                                <button type="submit" class="input-prestasi-btn-unggah">Tambah</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>
 </main>
-<script src="<?= BASEJS ?>/adminAgenda.js"></script>
 <script src="<?= BASEJS ?>/adminBeranda.js"></script>
 </body>
 </html>

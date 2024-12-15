@@ -1,7 +1,7 @@
 <?php
 class Login extends Controller {
-    public function index() {
-        $this->view('Login/index');
+    public function login() {
+        $this->view('Login/login');
     }
     public function auth() {
         $this->model('loginauth')->authLogin();

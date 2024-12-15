@@ -12,10 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (status === "Diterima") {
           color = "#01FB37";
       } else if (status === "Proses") {
-          color = "#FEB110";
+          color = "#FFEB11";
       }
 
       // Terapkan warna ke elemen td
       element.style.backgroundColor = color;
+
+      // Tambahkan warna teks
+      if (status === "Ditolak") {
+          element.style.color = "#ffffff";
+      }
+      
   });
 });

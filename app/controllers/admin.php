@@ -1,7 +1,7 @@
 <?php 
 
 class Admin extends Controller {
-    public function index (){
+    public function login (){
         $data['judul'] = 'BERANDA';
         $data['nama'] = $this->model('UserAdmin')->getData('nama_admin');
         $data['NIP'] = $this->model('UserAdmin')->getData('id_admin');
@@ -29,7 +29,7 @@ class Admin extends Controller {
         $data['NIP'] = $this->model('UserAdmin')->getData('id_admin');
         $data['email'] = $this->model('UserAdmin')->getData('email_admin');
         $this->view('templates/templateAdmin', $data);
-        $this->view('admin/validasiInput', $data);
+        $this->view('admin/input', $data);
     }    
 
     public function updateStatus (){
@@ -40,7 +40,7 @@ class Admin extends Controller {
     //     $this->model('prestasi')->setPrestasi();
     //     $data['point']=$this->model('prestasi')->calculatePoints();
     // }
-    public function validasiInput(){
+    public function input(){
         $data['judul'] = 'VALIDASI';
         $data['nama'] = $this->model('UserAdmin')->getData('nama_admin');
         $data['NIP'] = $this->model('UserAdmin')->getData('id_admin');
@@ -50,7 +50,7 @@ class Admin extends Controller {
         // $data['surat'] = !empty($_FILES['surat']['name']) ? $_FILES['surat']['name'] : ($data['surat'] ?? null);
         // $data['proposal'] = !empty($_FILES['proposal']['name']) ? $_FILES['proposal']['name'] : ($data['proposal'] ?? null);        
         $this->view('templates/templateAdmin', $data);
-        $this->view('admin/validasiInput', $data);
+        $this->view('admin/input', $data);
     }
     public function prestasi (){
         $data['judul'] = 'PRESTASI';
@@ -59,6 +59,6 @@ class Admin extends Controller {
         $data['email'] = $this->model('UserAdmin')->getData('email_admin');
         $data['prestasi'] = $this->model('UserAdmin')->getValidasiPrestasi();
         $this->view('templates/templateAdmin',$data );
-        $this->view('admin/validasiPrestasi',$data);
+        $this->view('admin/prestasi',$data);
     }
 }

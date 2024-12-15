@@ -23,7 +23,7 @@
             </div>
         </section>
         <div class="leaderboard-ranking">
-            <h3>Ranking</h3>
+            <h1>Ranking</h1>
             <?php if (!empty($data['leaderboard'])): ?>
                 <?php foreach ($data['leaderboard'] as $index => $item): ?>
                     <div class="leaderboard-ranking-item">
@@ -48,7 +48,7 @@
             <h2>Fitur</h2>
             <div class="features-list">
             <div class="feature">
-            <a href="formInputPrestasi_Mhs.php">
+            <a href="formInput">
                 <div class="feature-image">
                     <img src="../img/InputPrestasi-page.png" alt="Input Prestasi">
                 </div>
@@ -58,7 +58,7 @@
             </a>
             </div>
             <div class="feature">
-            <a href="printPrestasi_Mhs.php">
+            <a href="printfile">
                 <div class="feature-image">
                     <img src="../img/CetakPrestasi-page.png" alt="Cetak Prestasi">
                 </div>
@@ -88,8 +88,10 @@
                     <button onclick="toggleAnswer(this)">Cetak Prestasi Berfungsi untuk apa?</button>
                     <div class="answer">Fitur ini digunakan untuk mencetak bukti prestasi yang dapat digunakan untuk keperluan administratif.</div>
                 </div>
-                <script src="js/faq.js" ></script>
             </div>
         </div>
     </div>
 </main>
+<script src="<?= BASEJS ?>/faq.js"></script>
+</body>
+</html>

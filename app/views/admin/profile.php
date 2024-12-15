@@ -1,5 +1,4 @@
     <!-- Main Content -->
-    <link rel="stylesheet" href="<?= BASECSS?>/Adminprofile.css">
     <main class="main-content">
         <div>
             <div class="profile-container">

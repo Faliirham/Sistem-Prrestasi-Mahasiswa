@@ -36,7 +36,7 @@
 .agenda-header h2 {
   color: #fff;
 }
-  
+
 .tambah-agenda {
   background-color: #009F58;
   color: #fff;
@@ -85,8 +85,10 @@
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .agenda-item::-webkit-scrollbar {
@@ -105,12 +107,6 @@
 .agenda-item:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
-}
-
-.agenda-item h3 {
-  margin: 0;
-  font-size: 20px;
-  text-align: left;
 }
 
 .edit-delete-icons {
@@ -150,6 +146,29 @@
   margin-top: 0px;
 }
 
+.agenda-item h3 {
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap; 
+  position: relative; 
+  cursor: pointer; 
+}
+
+.agenda-item h3:hover {
+  animation: scrollText 4s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150%));
+  }
+}
+
+
 .time-icon {
   width: 16px;
   height: 16px;
@@ -159,6 +178,7 @@
   position: relative;
   color: blue;
   text-decoration: none;
+  text-align: right;
   transition: color 0.3s;
   display: flex;
   align-items: flex-end;

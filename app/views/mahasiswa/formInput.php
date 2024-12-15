@@ -46,7 +46,7 @@
                 </div>
                 <!-- Upload Fields -->
                 <div class="validasi-input-form-group-file">
-                    <label for="sertifikat">Upload Sertifikat Lomba
+                    <label>Upload Sertifikat Lomba
                         <span style="color: red;">*</span>
                     </label>
                     <div class="form-upload">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="validasi-input-form-group-file">
-                    <label for="foto">Upload Foto Kegiatan
+                    <label>Upload Foto Kegiatan
                         <span style="color: red;">*</span>
                     </label>
                     <div class="form-upload">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="validasi-input-form-group-file">
-                    <label for="surat">Upload Surat Tugas
+                    <label>Upload Surat Tugas
                         <span style="color: red;">*</span>
                     </label>
                     <div class="form-upload">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="validasi-input-form-group-file">
-                    <label for="proposal">Upload Proposal/Karya</label>
+                    <label>Upload Proposal/Karya</label>
                     <div class="form-upload">
                         <div class="file-info">
                             <span class="file-name" id="proposal-name">Tidak ada file yang dipilih</span>
@@ -97,10 +97,13 @@
                 </div>
                 <div class="validasi-input-form-actions">
                     <p>*Pastikan Data yang anda masukkan telah sesuai !</p>
-                    <button type="reset" class="validasi-input-btn-batal" onclick="window.location.href='<?= BASEURL ?>/mahasiswa/input_prestasi'">Batal</button>
+                    <button type="reset" class="validasi-input-btn-batal" onclick="window.location.href='<?= BASEURL ?>/mahasiswa/prestasi'">Batal</button>
                     <button type="submit" class="validasi-input-btn-unggah">Unggah</button>
                 </div>
             </form>
         </div>
     </div>
 </main>
+<script src="<?=BASEJS?>/forminput.js"></script>
+</body>
+</html>

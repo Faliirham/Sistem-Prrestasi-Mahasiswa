@@ -2,7 +2,7 @@
 
 class App {
     protected $controller = 'login';
-    protected $method = 'index';
+    protected $method = 'login';
     protected $params = [];
 
     public function __construct() {

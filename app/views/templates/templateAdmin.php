@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="<?=BASEIMG?>/logo_SIPPMA.png">
     <title>SIPPMA <?=$data['judul']?></title>
-    <link rel="stylesheet" href="<?= BASECSS?>/adminGlobal.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/adminAgenda.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/adminLeaderboard.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/adminFitur.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/adminPrestasi.css">
-    <link rel="stylesheet" href="<?= BASECSS?>/adminInput.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/global.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/agenda.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/leaderboard.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/fitur.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/profile.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/prestasi.css">
+    <link rel="stylesheet" href="<?= BASECSS?>/input.css">
+
 </head>
 <body>
     <div class="container">
@@ -22,7 +24,7 @@
                 IPP<span class="highlight">MA</span>
             </h1>
             <div class="logout">
-            <button onclick="window.location.href='<?= BASEURL ?>/login/logout'">Logout</button>
+                <button onclick="window.location.href='<?= BASEURL ?>/login/logout'">Logout</button>
             </div>
         </header>
         <div class="main">
@@ -40,10 +42,11 @@
                         <img src="<?=BASEIMG?>/Profile_Icon.png" alt="Profile Icon" class="menu-icon">Profile
                     </a>
                     <a href="<?=BASEURL?>/admin/prestasi" class="menu-item">
-                        <img src="<?=BASEIMG?>/Validasi_Icon.png" alt="Validasi Icon" class="menu-icon">Validasi Prestasi
+                        <img src="<?=BASEIMG?>/Leaderboard_Icon.png" alt="Validasi Icon" class="menu-icon">Prestasi
                     </a>
                 </nav>
                 <footer>
                     <p>© polinema.sch.id</p>
                 </footer>
             </aside>
+     

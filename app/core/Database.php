@@ -6,7 +6,7 @@ class Database {
 
     public function __construct() {
         try {
-            $this->conn = new PDO("sqlsrv:server=YERIMI\SQLEXPRESS;database=Presma");
+            $this->conn = new PDO("sqlsrv:server=SCAREBAT\SQLEXPRESS;database=Presma");
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $error) {
             die("Connection failed: " . $error->getMessage());
