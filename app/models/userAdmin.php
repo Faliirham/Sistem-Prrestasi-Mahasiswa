@@ -84,6 +84,27 @@ class UserAdmin {
                 }                
            } 
         }
+        public function deleteAgendaById() {
+            // Pastikan data ID diterima dari POST
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+                $id = $_POST['id'];
+        
+                $query = "DELETE FROM agenda WHERE id_agenda = :id";
+                $this->db->query($query);
+                $this->db->bind('id', $id);
+                $result = $this->db->execute();
+        
+                // Menampilkan pesan sukses atau gagal
+                if ($result) {
+                    echo "<script>alert('Agenda berhasil dihapus!'); window.location.href = '" . BASEURL . "/admin/beranda';</script>";
+                } else {
+                    echo "<script>alert('Gagal menghapus agenda!'); window.location.href = '" . BASEURL . "/admin/beranda';</script>";
+                }
+            } else {
+                // Jika data ID tidak ditemukan atau metode bukan POST
+                echo "<script>alert('Akses tidak valid!'); window.location.href = '" . BASEURL . "/admin/beranda';</script>";
+            }
+        }        
         
         public function getValidasiPrestasi (){
                 $query = "SELECT 

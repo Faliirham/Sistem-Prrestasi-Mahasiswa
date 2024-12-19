@@ -34,7 +34,7 @@ class LoginAuth {
             // Username ditemukan, simpan ke session berdasarkan role
             if (!empty($result['id_admin'])) {
                 $_SESSION['admin'] = $this->username;
-                header('Location: ' . BASEURL . '/admin/beranda');
+                header('Location: ' . BASEURL . '/admin/login');
                 exit;
             } elseif (!empty($result['id_mhs'])) {
                 $_SESSION['mahasiswa'] = $this->username;
@@ -51,8 +51,9 @@ class LoginAuth {
 
     public function logout() {
         session_destroy();
-        header('Location: ' . BASEURL . '/login');
-        exit;
+        echo "<script>alert('Berhasil logout') 
+            window.location.href = '" . BASEURL . "/login';</script>";
+            exit;
     }
 
     public function reset() {

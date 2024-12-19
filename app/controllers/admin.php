@@ -14,6 +14,10 @@ class Admin extends Controller {
     public function addAgenda(){
         $this->model('UserAdmin')->addAgenda();
     }
+    public function delAgenda() {
+        $this->model('UserAdmin')->deleteAgendaById();
+    }    
+    
     public function profile(){
         $data['judul'] = 'PROFILE';
         $data['nama'] = $this->model('UserAdmin')->getData('nama_admin');

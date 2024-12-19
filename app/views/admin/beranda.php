@@ -11,10 +11,21 @@
                 <?php if (!empty($data['agenda'])): ?>
                     <?php foreach ($data['agenda'] as $agenda): ?>
                         <div class="agenda-item">
-                            <div class="edit-delete-icons">
-                                <img class="edit-icon" src="<?= BASEIMG?>/Edit_icon.png" alt="Edit">
-                                <img class="delete-icon" src="<?= BASEIMG?>/Delete_icon.png" alt="Delete">
+                        <div class="edit-delete-icons">
+                            <div class="action-buttons">
+                            <!-- Tombol Edit -->
+                            <button class="edit-button" data-id="<?=$agenda['id_agenda']?>" onclick="redirectToEdit(this)">
+                                <img src="<?=BASEIMG?>/Edit_icon.png" alt="Edit" />
+                            </button>
+                            <!-- Tombol Delete -->
+                            <form action="<?=BASEURL?>/admin/delAgenda" method="POST" style="display: inline;" onsubmit="return confirmDelete();">
+                                <input type="hidden" name="id" value="<?=$agenda['id_agenda']?>">
+                                <button class="delete-button" type="submit">
+                                <img src="<?=BASEIMG?>/Delete_icon.png" alt="Delete" />
+                                </button>
+                            </form>
                             </div>
+                        </div>
                             <h3><?= htmlspecialchars($agenda['nama_agenda'] ?? 'Nama agenda tidak tersedia') ?></h3>
                             <div class="agenda-item-content">
                                 <img class="time-icon" src="<?= BASEIMG ?>/time.png" alt="Time">
@@ -28,7 +39,6 @@
                 <?php endif; ?>
             </div>
         </section>
-        
         <div id="popupAgenda" class="popup-agenda">
             <div class="popup-content-agenda">
                 <span class="close-btn-agenda">&times;</span>
@@ -136,5 +146,6 @@
     </div>
 </main>
 <script src="<?= BASEJS ?>/adminBeranda.js"></script>
+<script src="<?= BASEJS ?>/adminAgenda.js"></script>
 </body>
 </html>
