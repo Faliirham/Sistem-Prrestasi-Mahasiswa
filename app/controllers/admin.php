@@ -14,6 +14,12 @@ class Admin extends Controller {
     public function addAgenda(){
         $this->model('UserAdmin')->addAgenda();
     }
+    // public function updateAgenda(){
+    //     $agenda['nama'] = $this->model('UserAdmin')->getAgendaById('nama_agenda');
+    //     $agenda['tanggal'] = $this->model('UserAdmin')->getAgendaById('tanggal_agenda');
+    //     $agenda['link'] = $this->model('UserAdmin')->getAgendaById('link');
+    //     $this->model('UserAdmin',$agenda)->editAgenda();
+    // }
     public function delAgenda() {
         $this->model('UserAdmin')->deleteAgendaById();
     }    
@@ -39,7 +45,12 @@ class Admin extends Controller {
     public function updateStatus (){
         $this->model('UserAdmin')->updateStatus();
     }
-
+    public function addUser (){
+        $this->model('UserAdmin')->addUser();
+    }
+    public function addTingkatPrestasi(){
+        $this->model('UserAdmin')->addTingkatPrestasi();
+    }
     // public function setPrestasi(){
     //     $this->model('prestasi')->setPrestasi();
     //     $data['point']=$this->model('prestasi')->calculatePoints();

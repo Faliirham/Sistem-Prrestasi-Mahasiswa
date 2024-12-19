@@ -11,21 +11,24 @@
                 <?php if (!empty($data['agenda'])): ?>
                     <?php foreach ($data['agenda'] as $agenda): ?>
                         <div class="agenda-item">
-                        <div class="edit-delete-icons">
-                            <div class="action-buttons">
-                            <!-- Tombol Edit -->
-                            <button class="edit-button" data-id="<?=$agenda['id_agenda']?>" onclick="redirectToEdit(this)">
-                                <img src="<?=BASEIMG?>/Edit_icon.png" alt="Edit" />
-                            </button>
-                            <!-- Tombol Delete -->
-                            <form action="<?=BASEURL?>/admin/delAgenda" method="POST" style="display: inline;" onsubmit="return confirmDelete();">
-                                <input type="hidden" name="id" value="<?=$agenda['id_agenda']?>">
-                                <button class="delete-button" type="submit">
-                                <img src="<?=BASEIMG?>/Delete_icon.png" alt="Delete" />
-                                </button>
-                            </form>
+                            <div class="edit-delete-icons">
+                                <div class="action-buttons">
+                                    <!-- Tombol Edit -->
+                                    <form style="display: inline;" method="POST" action="<?= BASEURL ?>/admin/editAgenda">
+                                        <input type="hidden" name="id" value="<?= $agenda['id_agenda'] ?>">
+                                        <button class="edit-button">
+                                            <img src="<?= BASEIMG ?>/Edit_icon.png" alt="Edit" />
+                                        </button>
+                                    </form>
+                                    <!-- Tombol Delete -->
+                                    <form action="<?= BASEURL ?>/admin/delAgenda" method="POST" style="display: inline;" onsubmit="return confirmDelete();">
+                                        <input type="hidden" name="id" value="<?= $agenda['id_agenda'] ?>">
+                                        <button class="delete-button" type="submit">
+                                            <img src="<?= BASEIMG ?>/Delete_icon.png" alt="Delete" />
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
                             <h3><?= htmlspecialchars($agenda['nama_agenda'] ?? 'Nama agenda tidak tersedia') ?></h3>
                             <div class="agenda-item-content">
                                 <img class="time-icon" src="<?= BASEIMG ?>/time.png" alt="Time">
@@ -35,14 +38,16 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>Tidak ada agenda tersedia.</p>
+                    <p style="color: whitesmoke;">Tidak ada agenda tersedia.</p>
                 <?php endif; ?>
             </div>
         </section>
+
+        <!-- Popup untuk menambahkan agenda -->
         <div id="popupAgenda" class="popup-agenda">
             <div class="popup-content-agenda">
                 <span class="close-btn-agenda">&times;</span>
-                <form class="input-agenda-form" action="<?= BASEURL?>/admin/addAgenda" method="post" enctype="multipart/form-data">
+                <form class="input-agenda-form" action="<?= BASEURL ?>/admin/addAgenda" method="post" enctype="multipart/form-data">
                     <div class="input-agenda-form-group">
                         <label for="nama-agenda">Nama Agenda</label>
                         <input type="text" id="nama-agenda" name="nama-agenda" placeholder="Nama Agenda" required>
@@ -62,6 +67,33 @@
             </div>
         </div>
 
+        <!-- Popup untuk mengedit agenda -->
+        <div class="popup-update-agenda">
+            <div class="popup-update-content-agenda">
+                <form action="<?= BASEURL ?>/admin/editAgenda" method="POST" enctype="multipart/form-data">
+                    <div class="input-agenda-form-group">
+                        <label for="nama-agenda">Nama Agenda</label>
+                        <input type="text" id="nama-agenda" name="nama-agenda" value="<?= htmlspecialchars($agenda['nama_agenda'] ?? '') ?>" required>
+                    </div>
+
+                    <div class="input-agenda-form-group">
+                        <label for="tanggal-agenda">Tanggal Agenda</label>
+                        <input type="date" id="tanggal-agenda" name="tanggal-agenda" value="<?= htmlspecialchars($agenda['tanggal_agenda'] ?? '') ?>" required>
+                    </div>
+
+                    <div class="input-agenda-form-group">
+                        <label for="link-agenda">Link Agenda</label>
+                        <input type="url" id="link-agenda" name="link-agenda" value="<?= htmlspecialchars($agenda['link'] ?? '') ?>" required>
+                    </div>
+
+                    <div class="input-agenda-form-actions">
+                        <button type="submit" class="edit-agenda-btn-unggah">Simpan Perubahan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Ranking section -->
         <div class="leaderboard-ranking">
             <h1>Ranking</h1>
             <?php foreach ($data['leaderboard'] as $item): ?>
@@ -77,6 +109,7 @@
             <?php endforeach; ?>
         </div>
 
+        <!-- Features section -->
         <section id="features" class="features">
             <h2>Fitur</h2>
             <div class="features-list">
@@ -89,10 +122,11 @@
                     <button id="tambah-user" class="tambah-data">Tambah</button>
                 </div>
 
+                <!-- Popup untuk menambah user -->
                 <div id="popupUser" class="popup-user">
                     <div class="popup-content-user">
                         <span class="close-btn-user">&times;</span>
-                        <form class="input-user-form" action="#" method="post" enctype="multipart/form-data">
+                        <form class="input-user-form" action="<?=BASEURL?>/admin/addUser" method="post" enctype="multipart/form-data">
                             <div class="input-user-form-group">
                                 <label for="username">Username</label>
                                 <input type="text" id="username" name="username" placeholder="Username" required>
@@ -129,7 +163,7 @@
                 <div id="popupPrestasi" class="popup-prestasi">
                     <div class="popup-content-prestasi">
                         <span class="close-btn-prestasi">&times;</span>
-                        <form class="input-prestasi-form" action="#" method="post" enctype="multipart/form-data">
+                        <form class="input-prestasi-form" action="<?=BASEURL?>/admin/addTingkatPrestasi" method="post" enctype="multipart/form-data">
                             <div class="input-prestasi-form-group">
                                 <label for="nama-prestasi">Tingkat Prestasi</label>
                                 <input type="text" id="nama-prestasi" name="nama-prestasi" placeholder="Tingkat Prestasi" required>
@@ -145,6 +179,7 @@
         </section>
     </div>
 </main>
+
 <script src="<?= BASEJS ?>/adminBeranda.js"></script>
 <script src="<?= BASEJS ?>/adminAgenda.js"></script>
 </body>

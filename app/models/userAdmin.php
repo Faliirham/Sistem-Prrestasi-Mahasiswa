@@ -38,7 +38,23 @@ class UserAdmin {
             return 'Pengguna tidak ditemukan'; // Alternatif jika tidak ada data
         }
     }
-    
+    public function getAgendaById($field){
+            $id = $_POST['id'];
+            $stmt = $this->db->query("SELECT * FROM agenda WHERE id_agenda = :id");
+            $stmt->bind(':id', $id);
+            $agendaData = $stmt->single();
+        if ($agendaData) {
+            // Periksa apakah kolom yang diminta ada dalam hasil
+            if (isset($agendaData[$field])) {
+                return $agendaData[$field]; // Mengembalikan nilai dari kolom yang diminta
+            } else {
+                return 'Kolom tidak ditemukan'; // Jika kolom tidak ada
+            }
+        } else {
+            return 'Pengguna tidak ditemukan'; // Alternatif jika tidak ada data
+        }
+    }
+
     public function showAgenda(){
         if (isset($_SESSION['admin'])) {
             $querry = "SELECT * FROM Agenda";
@@ -104,7 +120,27 @@ class UserAdmin {
                 // Jika data ID tidak ditemukan atau metode bukan POST
                 echo "<script>alert('Akses tidak valid!'); window.location.href = '" . BASEURL . "/admin/beranda';</script>";
             }
-        }        
+        }
+        public function editAgenda (){
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+                $id = $_POST['id'];
+                $nama_agenda = $_POST['nama-agenda'];
+                $tanggal_agenda = $_POST['tanggal-agenda'];
+                $link_agenda = $_POST['link-agenda'];
+
+                $querry = "UPDATE agenda SET nama_agenda = :nama, tanggal_agenda = :tanggal, link = :link WHERE id_agenda = :id";
+                $this->db->query($querry);
+                $this->db->bind('id', $id);
+                $this->db->bind('nama', $nama_agenda);
+                $this->db->bind('tanggal', $tanggal_agenda);
+                $this->db->bind('link', $link_agenda);
+                $result = $this->db->execute();
+
+                if ($result) {
+                    echo "<script>alert('Agenda berhasil diubah!'); window.location.href = '". BASEURL. "/admin/beranda';</script>";
+                }
+            }
+        }
         
         public function getValidasiPrestasi (){
                 $query = "SELECT 
@@ -193,5 +229,77 @@ class UserAdmin {
             }
             return false; // Return false if admin session is not set
         }
+
+        public function addUser() {
+            if (isset($_SESSION['admin'])) {
+                // Gather form data
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $role = $_POST['role'];
+                $id_mhs = null;
+                $id_admin = null;
         
+                // Check role and insert into the correct table (Mahasiswa or Admin)
+                if ($role == 'mahasiswa') {
+                    $id_mhs = $username;  // Use username as id_mhs for mahasiswa
+                    $id_admin = null;
+                    $role = 1; // Set role to mahasiswa
+        
+                    // Insert into Mahasiswa table
+                    $query1 = "INSERT INTO Mahasiswa (id_mhs, nama_mhs, id_prodi, Tahun_angkatan, email_mhs, id_role, foto_mhs) 
+                              VALUES (:id_mhs, NULL, NULL, NULL, NULL, 1, NULL)";
+                    $this->db->query($query1);
+                    $this->db->bind('id_mhs', $id_mhs);
+                    $result = $this->db->execute();
+                } elseif ($role == 'admin') {
+                    $id_admin = $username;  // Use username as id_admin for admin
+                    $id_mhs = null;
+                    $role = 2;  // Set role to admin
+        
+                    // Insert into Admin table
+                    $query2 = "INSERT INTO Admin (id_admin, nama_admin, email_admin, id_role, foto_admin) 
+                              VALUES (:id_admin, NULL, NULL, 2, NULL)";
+                    $this->db->query($query2);
+                    $this->db->bind('id_admin', $id_admin);
+                    $result = $this->db->execute();
+                }
+        
+                // Insert login data (only password) with WHERE condition
+                if ($id_mhs) {
+                    // For mahasiswa
+                    $query = "UPDATE Login SET password = :password WHERE id_mhs = :id_mhs";
+                    $this->db->query($query);
+                    $this->db->bind('id_mhs', $id_mhs);
+                } elseif ($id_admin) {
+                    // For admin
+                    $query = "UPDATE Login SET password = :password WHERE id_admin = :id_admin";
+                    $this->db->query($query);
+                    $this->db->bind('id_admin', $id_admin);
+                }
+        
+                $this->db->bind('password', $password);  // Bind password (consider hashing)
+                $result = $this->db->execute();
+
+                if($result){
+                    echo "<script>alert('User berhasil ditambahkan!'); window.location.href = '". BASEURL. "/admin/beranda';</script>";
+                }
+            }
+        }     
+        
+        public function addTingkatPrestasi(){
+            if (isset($_SESSION['admin'])) {
+                // Gather form data
+                $nama_tingkat = $_POST['nama-prestasi'];
+
+                $querry = "INSERT INTO Kategori_prestasi (nama_kategori) VALUES
+                (:nama_tingkat)";
+                
+                $this->db->query($querry);
+                $this->db->bind('nama_tingkat', $nama_tingkat);
+                $result = $this->db->execute();
+                if ($result) {
+                    echo "<script>alert('Tingkat prestasi berhasil ditambahkan!'); window.location.href = '". BASEURL. "/admin/beranda';</script>";
+                }
+            }
+        }
     }

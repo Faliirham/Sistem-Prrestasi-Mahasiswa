@@ -12,11 +12,6 @@ function adjustFontSize() {
     });
 }
  // Fungsi untuk redirect ke halaman edit
- function redirectToEdit(button) {
-    const id = button.getAttribute('data-id'); // Ambil ID dari atribut data
-    window.location.href = `<?=BASEURL?>/admin/editAgenda/${id}`;
-  }
-
   // Konfirmasi saat ingin menghapus
   function confirmDelete() {
     return confirm('Apakah Anda yakin ingin menghapus agenda ini?');

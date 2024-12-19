@@ -18,6 +18,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Modal untuk Ubah Agenda
+    document.addEventListener('DOMContentLoaded', function () {
+        const editAgendaBtn = document.querySelector('.edit-button'); // Update this with the button or element triggering the popup
+        const popupUpdateAgenda = document.querySelector('.popup-update-agenda');
+        const closeBtnUpdateAgenda = document.querySelector('.close-btn-update-agenda'); // Update this with the close button inside the popup
+    
+        // Open the popup when the button is clicked
+        editAgendaBtn.addEventListener('click', function () {
+            popupUpdateAgenda.style.display = 'block';
+        });
+    
+        // Close the popup when the close button is clicked
+        closeBtnUpdateAgenda.addEventListener('click', function () {
+            popupUpdateAgenda.style.display = 'none';
+        });
+    
+        // Close the popup if clicking outside the popup content
+        window.addEventListener('click', function (event) {
+            if (event.target === popupUpdateAgenda) {
+                popupUpdateAgenda.style.display = 'none';
+            }
+        });
+    });    
     // Modal untuk Tambah User
     const tambahUserBtn = document.getElementById('tambah-user');
     const popupUser = document.getElementById('popupUser');
