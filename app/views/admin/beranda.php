@@ -5,7 +5,7 @@
         <section class="agenda">
             <div class="agenda-header">
                 <h2>Agenda Lomba Mahasiswa</h2>
-                <button class="tambah-agenda">Tambah Data</button>
+                <button class="tambah-agenda">Tambah Agenda</button>
             </div>
             <div class="agenda-list">
                 <?php if (!empty($data['agenda'])): ?>
